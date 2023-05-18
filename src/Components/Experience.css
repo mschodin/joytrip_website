@@ -1,0 +1,32 @@
+.workexp {
+    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+    color: white;
+    font-family: "Nunito Sans";
+    border: 2px solid rgba(255, 255, 255, 0.37);
+    border-radius: 5px;
+}
+
+h1 {
+    font-family: Raleway;
+}
+
+.job {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.exp-header {
+    font-size: 5em;
+    padding: 5px;
+    margin-left: 25px;
+}
+
+hr {
+    background: linear-gradient(to left, var(--paletteColor3Dark), white, var(--paletteColor3Dark));
+    height: 2px !important;
+}

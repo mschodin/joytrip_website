@@ -1,0 +1,55 @@
+.projectsexp {
+    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+    color: white;
+    font-family: "Nunito Sans";
+    border: 2px solid rgba(255, 255, 255, 0.37);
+    border-radius: 5px;
+}
+
+.proj-header {
+    font-size: 5em;
+    padding: 5px;
+    margin-left: 25px;
+}
+
+.proj {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    margin-bottom: 20px;
+    display: inline-flex;
+}
+
+.proj-pic {
+    width: 25rem;
+    border-radius: 5px;
+}
+
+.pic-area {
+    width: 25rem;
+    position: relative;
+}
+
+.desc-area-left {
+    position: relative;
+    padding-top: 1rem;
+    padding-right: 3rem;
+}
+
+.desc-area-right {
+    position: relative;
+    padding: 1rem;
+    margin-left: 2rem;
+}
+
+h1 {
+    font-family: Raleway;
+}
+
+hr {
+    background: linear-gradient(to left, var(--paletteColor3Dark), white, var(--paletteColor3Dark));
+    height: 2px !important;
+}

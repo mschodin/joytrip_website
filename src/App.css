@@ -1,0 +1,93 @@
+@import './Components/Palette.css';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+
+.App {
+  text-align: center;
+  /* background-image: linear-gradient(#FFE58A, #FFCE61, #EE6C45, #BF3475, #50366F, #1F214D); */
+  min-height: 100vh;
+  overflow: auto;
+  /* background-image: linear-gradient(#FFE58A, #1F214D 20%); */
+  background-color: #FFE58A;
+}
+
+.section0-background {
+  background-image: linear-gradient(#FFE58A, #FFCE61, #EE6C45, #BF3475, #50366F, #1F214D);
+  /* background: pink; */
+}
+
+.section1-background {
+  background-color: #1F214D;
+}
+
+.section2-background {
+  background-color: #1F214D;
+}
+
+.section3-background {
+  background-color: #1F214D;
+}
+
+.section4-background {
+  background-color: #1F214D;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  /* background-color: #282c34; */
+  background-image: linear-gradient(to top right, var(--paletteColor5), var(--paletteColor3));
+  min-height: 100vh;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  /* color: white; */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.navLink {  
+  display: inline-flex;
+  margin-right: 10px;
+  font-size: calc(10px + 2vmin);
+  float: right;
+  /* position: absolute; */
+  /* margin-top: 0vh; */
+  /* margin-left: 50vw; */
+  /* justify-self: right; */
+  /* align-self: flex-end; */
+
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@font-face {
+  font-family: SergioTrendy;
+  src: url(./fonts/SergiotrendyRegular-p72da.ttf);
+}
+
+@font-face {
+  font-family: Nahista;
+  src: url(./fonts/Nahista.ttf);
+}

@@ -1,0 +1,36 @@
+@import './Palette.css';
+
+.navLink {  
+    display: inline-flex;
+    margin-right: 10px;
+    margin-top: 3px;
+    font-size: 1.5em;
+    float: right;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    padding: .4em .6em .4em;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: Raleway;
+}
+
+.navLink:hover {
+    color:darkgrey;
+    filter:grayscale(50);
+    cursor: pointer;
+}
+
+.customNavBar {
+    width: 100%;
+    height: 5vh;
+}
+
+.navline {
+    background: linear-gradient(to left, white, var(--paletteColor3Dark));
+    width: 80%;
+    margin-right: 0;
+    margin-left: auto;
+    height: 2px !important;
+}
