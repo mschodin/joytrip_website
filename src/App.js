@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import NavBar from './Components/Nav';
 import Home from './Components/Home';
-import About from './Components/About';
+import Content from './Components/Content';
 import Experience from './Components/Experience';
 import Section from './Components/Section';
 import Projects from './Components/Projects';
@@ -12,7 +12,7 @@ import "./fonts/Nahista.ttf";
 
 function App() {
   var home = <Home />;
-  var about = <About />;
+  var content = <Content />;
   var experience = <Experience />;
   var projects = <Projects />;
   var resume = <Resume />;
@@ -29,7 +29,7 @@ function App() {
         </div>
         <div className="section1-background">
           <Section
-            content={about}
+            content={content}
             id="section1"
             className="section1-background"
           />

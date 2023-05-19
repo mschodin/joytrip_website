@@ -4,23 +4,17 @@
 
 .App {
   text-align: center;
-  /* background-image: linear-gradient(#FFE58A, #FFCE61, #EE6C45, #BF3475, #50366F, #1F214D); */
+  background-image: linear-gradient(#ff9436, #FFCE61, #EE6C45, #BF3475, #50366F, #1F214D);
   min-height: 100vh;
   overflow: auto;
-  /* background-image: linear-gradient(#FFE58A, #1F214D 20%); */
-  background-color: #FFE58A;
 }
 
-.section0-background {
-  background-image: linear-gradient(#FFE58A, #FFCE61, #EE6C45, #BF3475, #50366F, #1F214D);
-  /* background: pink; */
-}
 
 .section1-background {
   background-color: #1F214D;
 }
 
-.section2-background {
+/* .section2-background {
   background-color: #1F214D;
 }
 
@@ -30,7 +24,7 @@
 
 .section4-background {
   background-color: #1F214D;
-}
+}  */
 
 .App-logo {
   height: 40vmin;
