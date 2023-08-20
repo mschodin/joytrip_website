@@ -12,12 +12,12 @@
     padding: .4em .6em .4em;
 
     font-size: 1.5rem;
-    font-weight: 600;
-    font-family: Raleway;
+    font-weight: 100;
+    font-family:SergioTrendy;
 }
 
 .navLink:hover {
-    color:darkgrey;
+    color:lightgray;
     filter:grayscale(50);
     cursor: pointer;
 }
@@ -28,7 +28,9 @@
 }
 
 .navline {
-    background: linear-gradient(to left, white, var(--paletteColor3Dark));
+    /* background: linear-gradient(to left, white, var(--paletteColor3Dark)); */
+    background: linear-gradient(to left, white, #F9993b);
+    border: none;
     width: 80%;
     margin-right: 0;
     margin-left: auto;

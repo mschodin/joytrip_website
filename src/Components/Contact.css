@@ -1,0 +1,13 @@
+.resume-container {
+    display:inline-flex;
+    align-items: center;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.resume-image {
+    width: 100%;
+    border: 5px black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.404);
+    border-radius: 7px;
+}

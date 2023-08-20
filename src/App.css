@@ -4,14 +4,27 @@
 
 .App {
   text-align: center;
-  background-image: linear-gradient(#ff9436, #FFCE61, #EE6C45, #BF3475, #50366F, #1F214D);
+  background-image: url("./Assets/background-v1.0.0.png");
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+  /*background-image: linear-gradient(#ff9436, #FFCE61, #EE6C45, #BF3475, #50366F, #1F214D);*/
   min-height: 100vh;
   overflow: auto;
 }
 
+.section0-background {
+  /*background-image: url("./Assets/mr-time-art.jpg");*/
+  background-position-y: 0%;
+  background-position-x: 0%;
+  background-size: 350%; 
+}
 
 .section1-background {
-  background-color: #1F214D;
+  /*background-color: #1F214D;*/
 }
 
 /* .section2-background {

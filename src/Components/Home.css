@@ -48,3 +48,62 @@
 .section {
     margin-top: 4rem !important;
 }
+
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.mrtime-picture {
+    /* width: 25rem; */
+    height: 32rem;
+    width: 24rem;
+    margin-left: auto;
+    margin-right: auto;
+    /* inset | offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0px 1000px 0px white;
+    /* border: 2px solid black; */
+    /* border-radius: 8px; */
+    border-radius: 12px;
+}
+
+.album-title {
+    font-size: 1.7rem;
+    color: white;
+    font-weight: 700;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0.5rem;
+}
+
+.out-now {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 700;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.home-column1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.home-column2 {
+    width: 50%;
+    display: flex;
+}
+
+.home-spotify-player {
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 32rem;
+    width: 383px;
+    /* padding-left: 4rem; */
+    /* padding-right: 4rem; */
+}

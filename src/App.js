@@ -3,19 +3,19 @@ import React from 'react';
 import NavBar from './Components/Nav';
 import Home from './Components/Home';
 import Content from './Components/Content';
-import Experience from './Components/Experience';
+import AboutUs from './Components/AboutUs';
 import Section from './Components/Section';
-import Projects from './Components/Projects';
-import Resume from './Components/Resume';
+import Tour from './Components/Tour';
+import Contact from './Components/Contact';
 import "./fonts/SergiotrendyRegular-p72da.ttf";
 import "./fonts/Nahista.ttf";
 
 function App() {
   var home = <Home />;
   var content = <Content />;
-  var experience = <Experience />;
-  var projects = <Projects />;
-  var resume = <Resume />;
+  var aboutUs = <AboutUs />;
+  var tour = <Tour />;
+  var contact = <Contact />;
 
   return (
     <div className="App">
@@ -36,23 +36,17 @@ function App() {
         </div>
         <div className="section2-background">
           <Section
-            content={experience}
+            content={aboutUs}
             id="section2"
             className="section2-background"
             />
         </div>
         <div className="section3-background">
           <Section
-            content={projects}
+            content={tour}
             id="section3"
             className="section3-background"
             />
-        </div>
-        <div className="section4-background">
-          <Section
-            content={resume}
-            id="section4"
-          />
         </div>
     </div>
   );

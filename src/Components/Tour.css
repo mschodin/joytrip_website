@@ -1,0 +1,34 @@
+.tour-content {
+    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+    color: white;
+    font-family: "Nunito Sans";
+}
+
+.tour-table {
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.tour-row1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.tour-date {
+    width: 20%;
+}
+
+.tour-venue {
+    width: 60%;
+}
+
+.tour-location {
+    width: 20%;
+}
