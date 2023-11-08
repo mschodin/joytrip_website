@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutUs.css';
-import SunrisePic from '../Assets/joytrip-sunrise-photo.jpeg';
-import SunsetPic from '../Assets/joytrip-sunset-photo.jpeg';
+import SunrisePic from '../Assets/joytrip-sunrise-photo.png';
+import SunsetPic from '../Assets/joytrip-sunset-photo.png';
 import HorizontalDecal1 from '../Assets/horizontal-decal-1.png';
 
 function AboutUs(props) {
