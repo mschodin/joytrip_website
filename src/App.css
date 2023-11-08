@@ -14,6 +14,7 @@
   /*background-image: linear-gradient(#ff9436, #FFCE61, #EE6C45, #BF3475, #50366F, #1F214D);*/
   min-height: 100vh;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 .section0-background {
@@ -23,19 +24,20 @@
   background-size: 350%; 
 }
 
-.section1-background {
-  /*background-color: #1F214D;*/
-}
-
 /* .section2-background {
   background-color: #1F214D;
+} */
+
+.section1-background {
+  /* background-color: #1F214D; */
+  background:url('./Assets/lauderdale-sunrise-corn.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.section3-background {
-  background-color: #1F214D;
-}
-
-.section4-background {
+/* .section4-background {
   background-color: #1F214D;
 }  */
 

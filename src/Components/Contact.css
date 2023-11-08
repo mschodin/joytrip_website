@@ -1,8 +1,20 @@
 .resume-container {
-    display:inline-flex;
+    /* display:inline-flex;
     align-items: center;
     width: 60%;
-    margin-left: 20%;
+    margin-left: 20%; */
+    justify-content: center;
+    display: flex;
+    /* min-width: 640px;
+    max-width: 640px;
+    width: 640px;
+    min-height: 511px;
+    max-height: 511px;
+    height: 511px; */
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+
 }
 
 .resume-image {
@@ -10,4 +22,108 @@
     border: 5px black;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.404);
     border-radius: 7px;
+}
+
+.contact-form {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 640px;
+    max-width: 640px;
+    width: 640px;
+    min-height: 511px;
+    max-height: 511px;
+    height: 511px;
+}
+
+iframe > html {
+    overflow:hidden;
+}
+
+.email-area {
+    display:flex;
+    margin-top: 2rem;
+}
+
+.email-text-area {
+    margin-left: 30px;
+    /* margin-right: ; */
+    display: flex;
+    flex-direction: row;
+    line-height: 30px;
+    width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.email-header {
+    font-size: 28px;
+    color: white;
+    font-family: Nahista;
+    text-decoration: underline;
+}
+
+.email-addr {
+    color: white;
+    font-size: 30px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.contact-social-icon {
+    /* margin-right: 30px; */
+    margin-left: auto;
+    height: 65px;
+    width: 65px;
+}
+
+.icon {
+    height: 65px;
+    width: 65px;
+}
+
+@media (max-width:700px) {
+    .contact-form {
+        min-width: 488px;
+        max-width: 488px;
+        width: 488px;
+        min-height: 600px;
+        max-height: 600px;
+        height: 600px;
+    }
+}
+
+@media (max-width:550px) {
+    .contact-form {
+        min-width: 380px;
+        max-width: 380px;
+        width: 380px;
+        min-height: 650px;
+        max-height: 650px;
+        height: 650px;
+    }
+
+    .email-text-area {
+        width: 380px;
+    }
+
+    .email-addr {
+        font-size: 20px;
+    }
+
+    .icon {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media (max-width:400px) {
+    .contact-form {
+        min-width: 340px;
+        max-width: 340px;
+        width: 340px;
+        min-height: 700px;
+        max-height: 700px;
+        height: 700px;
+    }
 }

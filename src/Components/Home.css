@@ -57,8 +57,7 @@
 
 .mrtime-picture {
     /* width: 25rem; */
-    height: 32rem;
-    width: 24rem;
+    
     margin-left: auto;
     margin-right: auto;
     /* inset | offset-x | offset-y | blur-radius | spread-radius | color */
@@ -86,7 +85,7 @@
 }
 
 .home-column1 {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,16 +93,98 @@
 }
 
 .home-column2 {
-    width: 50%;
+    width: 100%;
     display: flex;
+    flex-direction: column;
 }
 
 .home-spotify-player {
     border-radius: 12px;
     margin-left: auto;
     margin-right: auto;
-    height: 32rem;
-    width: 383px;
+    box-shadow: 0px 0px 1000px 0px white;
     /* padding-left: 4rem; */
     /* padding-right: 4rem; */
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    /* padding-left: 6rem; */
+    /* padding-right: 6rem; */
+    margin-top: 1rem;
+    width: 80%;
+    /* margin-left: auto;
+    margin-right: auto;
+    max-width: 400px; */
+}
+
+.social-icon {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1000px) {
+    .home-content {
+        flex-direction: column;
+    }
+
+    .home-column2 {
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 501px) {
+    .mrtime-picture {
+        height: 32rem;
+        width: 24rem;
+    }
+
+    .home-spotify-player {
+        height: 32rem;
+        width: 383px;
+    }
+
+    .socials {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    .mrtime-picture {
+        /* height: 28rem; */
+        /* width: 21rem; */
+        width: 80%;
+    }
+
+    .home-spotify-player {
+        width: 80%;
+    }
+
+    .album-title {
+        font-size: 1.1rem;
+    }
+
+    .out-now {
+        font-size: 1rem;
+    }
+
+    .socials {
+        /* max-width: 200px; */
+        /* margin-right:auto;
+        margin-left:auto; */
+    }
+}
+
+@media (min-width: 450px) {
+    .socials{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 449px) {
+    .socials{
+        margin-left: 7%;
+    }
 }

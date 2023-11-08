@@ -5,7 +5,11 @@
     color: white;
     font-family: "Nunito Sans";
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    /* background: pink; */
+    /* padding: 2rem;
+    border: 1px solid white;
+    border-radius: 4px; */
 }
 
 .aboutus-text-area {
@@ -14,19 +18,21 @@
 }
 
 .aboutus-text {
-    margin-top: 3rem;
-    font-size: 1.5rem;
+    /* margin-top: 3rem; */
+    font-size: 1.25rem;
+    line-height: 26px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 
 .second-paragraph {
-    margin-top: 2rem; 
+    /* margin-top: 2rem;  */
 }
 
 .bold {
     font-weight: 800;
 }
 
-.aboutus-picture-area {
+/* .aboutus-picture-area {
     width: 45%;
     margin-right: 0;
     margin-left: auto;
@@ -34,4 +40,151 @@
 
 .aboutus-picture {
     width: 100%;
+} */
+
+.aboutus-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.m_bottom {
+    margin-bottom: 6rem;
+}
+
+.aboutus-text-area {
+    width: 60%;
+}
+
+.aboutus-picture-area {
+    /* height: 4rem; */
+}
+
+.aboutus-picture {
+    width: 30vw;
+    box-shadow: 0px 0px 1000px -30px white;
+}
+
+.m-right {
+    margin-right: 2rem;
+}
+
+.m-left {
+    margin-left: 2rem;
+}
+
+.horizontal-decal-1 {
+    /* width: calc(100% - 2rem); */
+    width: 70%;
+    filter: invert(1);
+    /* background: pink; */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1600px) {
+    .aboutus-text {
+        font-size: 1.5rem;
+        line-height: 30px;
+    }
+}
+
+@media (min-width: 1900px) {
+    .aboutus-text {
+        font-size: 1.6rem;
+        line-height: 36px;
+    }
+}
+
+@media (min-width: 2800px) {
+    .aboutus-text {
+        font-size: 2rem;
+        line-height: 44px;
+    }
+
+    .horizontal-decal-1 {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+}
+
+@media (min-width: 3441px) {
+    .aboutus-text {
+        font-size: 2.4rem;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 1117px) {
+    .aboutus-text {
+        font-size: 1rem;
+    }
+
+    .aboutus-picture {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .aboutus-text {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .aboutus-picture {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .aboutus-row {
+        flex-direction: column;
+    }
+
+    .aboutus-text-area {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .aboutus-picture-area {
+        width: 100%;
+        display: flex;
+        margin-top: 2rem;
+    }
+
+    .aboutus-picture {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .aboutus-text {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .horizontal-decal-1 {
+        margin-bottom: 1rem;
+    }
+
+    .second-paragraph {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .aboutus-text-area {
+        width: 90%;
+    }
+
+    .aboutus-picture {
+        width: 90%;
+    }
+
+    .horizontal-decal-1 {
+        width: 90%;
+    }
 }

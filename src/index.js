@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 //     <App />
 //   document.getElementById('root')
 // );
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

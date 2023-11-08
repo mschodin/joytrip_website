@@ -9,6 +9,22 @@ function NavBar(props) {
                 <li className="navLink">
                     <Link
                         activeClass="active"
+                        to="section1"
+                        offset={-50}
+                        duration={500}
+                    >Content</Link>
+                </li>
+                <li className="navLink">
+                    <Link
+                        activeClass="active"
+                        to="section2"
+                        offset={-70}
+                        duration={500}
+                    >About</Link>
+                </li>
+                <li className="navLink">
+                    <Link
+                        activeClass="active"
                         to="section3"
                         offset={-70}
                         duration={500}
@@ -17,18 +33,10 @@ function NavBar(props) {
                 <li className="navLink">
                     <Link
                         activeClass="active"
-                        to="section2"
+                        to="section4"
                         offset={-70}
                         duration={500}
-                    >About Us</Link>
-                </li>
-                <li className="navLink">
-                    <Link
-                        activeClass="active"
-                        to="section1"
-                        offset={-50}
-                        duration={500}
-                    >Content</Link>
+                    >Contact</Link>
                 </li>
             </ul>
             <hr className="navline"/>

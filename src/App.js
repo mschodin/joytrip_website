@@ -48,6 +48,13 @@ function App() {
             className="section3-background"
             />
         </div>
+        <div className="section4-background">
+          <Section
+            content={contact}
+            id="section4"
+            className="section4-background"
+            />
+        </div>
     </div>
   );
 }
