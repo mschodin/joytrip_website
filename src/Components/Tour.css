@@ -55,7 +55,7 @@
 }
 
 .tour-date {
-    width: 80%;
+    width: 70%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .tour-location {
-    width: 15%;
+    width: 20%;
     margin-left: auto;
     margin-right: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -73,7 +73,7 @@
 
 @media (max-width: 1420px) {
     .tour-location {
-        width: 18%;
+        width: 23%;
     }
 
     .tour-table-header {

@@ -53,6 +53,7 @@
 .home-content {
     display: flex;
     flex-direction: row;
+    margin-bottom: 8rem;
 }
 
 .mrtime-picture {
@@ -136,12 +137,12 @@
 
 @media (min-width: 501px) {
     .mrtime-picture {
-        height: 32rem;
+        height: 24rem;
         width: 24rem;
     }
 
     .home-spotify-player {
-        height: 32rem;
+        height: 24rem;
         width: 383px;
     }
 

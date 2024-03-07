@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import KOPB from '../Music/keep_on_passing_by_master.wav';
 import MrTimeArt from '../Assets/mr-time-art.jpg';
+import LetMeLayArt from '../Assets/let-me-lay-art.jpg';
 import SpotifyIcon from '../Assets/icons8-spotify.svg';
 import InstagramIcon from '../Assets/icons8-instagram.svg';
 import TiktokIcon from '../Assets/icons8-tiktok.svg';
@@ -22,9 +23,9 @@ function Home(props) {
             </div> */}
             <div className="home-content">
                 <div className='home-column1'>
-                    <img src={MrTimeArt} alt="Your Image" className="mrtime-picture"/>
-                    <div className="album-title">Mr. Time and the Joyful Ploys</div>
-                    <div className="out-now">NOW STREAMING</div>
+                    <img src={LetMeLayArt} alt="Your Image" className="mrtime-picture"/>
+                    <div className="album-title">Let Me Lay</div>
+                    <div className="out-now">Coming March 29, 2024</div>
                 </div>
                 <div className='home-column2'>
                     <iframe className='home-spotify-player' src="https://open.spotify.com/embed/album/626ZwDbfm8gDGOKSRM7B28?utm_source=generator&theme=0" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
