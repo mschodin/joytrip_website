@@ -2,6 +2,7 @@ import React from 'react';
 import './AboutUs.css';
 import SunrisePic from '../Assets/joytrip-sunrise-photo.png';
 import SunsetPic from '../Assets/joytrip-sunset-photo.png';
+import LittleVillageArticle from '../Assets/littlevillagearticle2.png';
 import HorizontalDecal1 from '../Assets/horizontal-decal-1.png';
 
 function AboutUs(props) {
@@ -24,6 +25,13 @@ function AboutUs(props) {
                     <div className="aboutus-text-area m-left">
                         <div className="aboutus-text second-paragraph">The band is fully independent with members managing multiple roles. Michael Schodin handles guitar, vocals, and audio engineering; Eddie Hochman contributes guitar, trumpet, keyboards, and vocals. Bennett Shapiro on drums and harmonies, while Mitchell Wisniewski's bass unifies their sound. The band draws inspiration from past icons (Joni Mitchell, The Beatles) and modern artists (The 1975, John Mayer, Pinegrove), to shape their eclectic style. Joytrip wanders and will keep on passing by.</div>
                         {/* <div className="aboutus-text second-paragraph">The band operates independently, with each member handling multiple roles. Michael Schodin serves as guitarist, vocalist, and audio engineer, while Eddie Hochman contributes on guitar, trumpet, keyboards, and vocals. Bennett Shapiro drums and provides harmonies, while Mitchell Wisniewski's bass unifies their sound. They draw inspiration from past musical icons and contemporary artists to shape their eclectic style.</div> */}
+                    </div>
+                </div>
+                <div className='aboutus-row article-area'>
+                    <div className="aboutus-picture-area">
+                        <a href="https://littlevillagemag.com/album-review-qa-joytrip-mr-time-and-the-joyful-ploys/" target="_blank">
+                            <img src={LittleVillageArticle} alt="Little Village Article" className="aboutus-article-pic"/>
+                        </a>
                     </div>
                 </div>
             </div>

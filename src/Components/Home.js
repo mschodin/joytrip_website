@@ -25,7 +25,7 @@ function Home(props) {
                 <div className='home-column1'>
                     <img src={LetMeLayArt} alt="Your Image" className="mrtime-picture"/>
                     <div className="album-title">Let Me Lay</div>
-                    <div className="out-now">Coming March 29, 2024</div>
+                    <div className="out-now">OUT NOW</div>
                 </div>
                 <div className='home-column2'>
                     <iframe className='home-spotify-player' src="https://open.spotify.com/embed/album/626ZwDbfm8gDGOKSRM7B28?utm_source=generator&theme=0" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

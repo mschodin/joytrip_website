@@ -4,12 +4,6 @@ import './Tour.css';
 function Tour(props) {
     let gigs = [
         {
-            date: "March 30, 2024",
-            time: "",
-            venue: "Spinal Tap",
-            city: "Cedar Rapids, IA"
-        },
-        {
             date: "April 28, 2024",
             time: "5:00-8:00 PM",
             venue: "Old Railroad Pub",

@@ -48,6 +48,14 @@
     flex-direction: row;
 }
 
+.aboutus-article-pic {
+    width: 100%;
+}
+
+.article-area {
+    margin-top: 4rem;
+}
+
 .m_bottom {
     margin-bottom: 6rem;
 }
