@@ -4,40 +4,22 @@ import './Tour.css';
 function Tour(props) {
     let gigs = [
         {
-            date: "April 28, 2024",
-            time: "5:00-8:00 PM",
-            venue: "Old Railroad Pub",
-            city: "Cedar Rapids, IA"
-        },
-        {
-            date: "May 17, 2024",
-            time: "7:00-10:00 PM",
-            venue: "The Jobsite",
+            date: "July 7, 2024",
+            time: "8:00 PM",
+            venue: "Gabes",
             city: "Iowa City, IA"
         },
         {
-            date: "May 24, 2024",
-            time: "1:40-2:00 PM",
-            venue: "KRFC Radio",
-            city: "Ft. Collins, CO"
+            date: "August 22, 2024",
+            time: "5:00 - 7:00 PM",
+            venue: "420 Linden St",
+            city: "East Lansing, MI"
         },
         {
-            date: "May 24, 2024",
-            time: "",
-            venue: "Little Bear Saloon",
-            city: "Evergreen, CO"
-        },
-        {
-            date: "May 25, 2024",
-            time: "8:00-11:00 PM",
-            venue: "Golden Moon Speakeasy",
-            city: "Golden, CO"
-        },
-        {
-            date: "May 26, 2024",
-            time: "8:00-10:00 PM",
-            venue: "East Fax Tap",
-            city: "Denver, CO"
+            date: "August 24, 2024",
+            time: "TBA",
+            venue: "Cobra Lounge",
+            city: "Chicago, IL"
         }
         ];
 

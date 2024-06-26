@@ -3,6 +3,8 @@ import './Home.css';
 import KOPB from '../Music/keep_on_passing_by_master.wav';
 import MrTimeArt from '../Assets/mr-time-art.jpg';
 import LetMeLayArt from '../Assets/let-me-lay-art.jpg';
+import OhNoArt from '../Assets/Oh No Cover Art.jpg';
+import SlushArt from '../Assets/Slush Cover.jpg';
 import SpotifyIcon from '../Assets/icons8-spotify.svg';
 import InstagramIcon from '../Assets/icons8-instagram.svg';
 import TiktokIcon from '../Assets/icons8-tiktok.svg';
@@ -23,12 +25,12 @@ function Home(props) {
             </div> */}
             <div className="home-content">
                 <div className='home-column1'>
-                    <img src={LetMeLayArt} alt="Your Image" className="mrtime-picture"/>
-                    <div className="album-title">Let Me Lay</div>
+                    <img src={SlushArt} alt="Your Image" className="mrtime-picture"/>
+                    <div className="album-title">Slush</div>
                     <div className="out-now">OUT NOW</div>
                 </div>
                 <div className='home-column2'>
-                    <iframe className='home-spotify-player' src="https://open.spotify.com/embed/album/626ZwDbfm8gDGOKSRM7B28?utm_source=generator&theme=0" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe className='home-spotify-player' src="https://open.spotify.com/embed/track/7kAgZexm0chUR6NIO58aFc?utm_source=generator" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <div className="socials">
                         <a className="social-icon" href="https://open.spotify.com/artist/2SYn55YfIWrAereupJ7KVt?si=u7fY4EIvSmKJZYX6KdE5Mw" target="_blank">
                             <img src={SpotifyIcon} />
