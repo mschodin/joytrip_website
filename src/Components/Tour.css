@@ -55,7 +55,7 @@
 }
 
 .tour-date {
-    width: 70%;
+    width: auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -70,6 +70,26 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 600;
     white-space: nowrap;
+}
+
+.ticket-button {
+    /* background: #EFBF04; */
+    background: #cca403;
+    color: white;
+    width: 6rem;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 1rem;
+    transition: background-color 0.5s;
+}
+
+.ticket-button:hover {
+    background: #eec933;
+    color: white;
 }
 
 .tour-at {

@@ -25,12 +25,12 @@ function Home(props) {
             </div> */}
             <div className="home-content">
                 <div className='home-column1'>
-                    <img src={SlushArt} alt="Your Image" className="mrtime-picture"/>
-                    <div className="album-title">Slush</div>
+                    <img src={OhNoArt} alt="Your Image" className="mrtime-picture"/>
+                    <div className="album-title">Oh No!</div>
                     <div className="out-now">OUT NOW</div>
                 </div>
                 <div className='home-column2'>
-                    <iframe className='home-spotify-player' src="https://open.spotify.com/embed/track/7kAgZexm0chUR6NIO58aFc?utm_source=generator" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe className='home-spotify-player' src="https://open.spotify.com/embed/track/0DtUae3Q3u5J4TYnkqr3ml?utm_source=generator" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <div className="socials">
                         <a className="social-icon" href="https://open.spotify.com/artist/2SYn55YfIWrAereupJ7KVt?si=u7fY4EIvSmKJZYX6KdE5Mw" target="_blank">
                             <img src={SpotifyIcon} />
