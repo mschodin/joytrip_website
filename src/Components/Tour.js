@@ -4,17 +4,23 @@ import './Tour.css';
 function Tour(props) {
     let gigs = [
         {
-            date: "August 22, 2024",
-            time: "5:00 - 7:00 PM",
-            venue: "420 Linden St",
-            city: "East Lansing, MI"
+            date: "January 30, 2025",
+            time: "6:00 PM",
+            venue: "Raccoon Motel",
+            city: "Davenport, IA",
+            ticket: "https://dice.fm/event/q2ky3o-calculated-wnobletiger-joytrip-baron-von-future-30th-jan-raccoon-motel-davenport-tickets?pid=9fd8409a&_branch_match_id=1401648931666472303&utm_medium=partners_api&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1U9NSjU1SkkxTLQwSrUvyEyxtUxLsTAxsExUqytKTUstKsrMS49PKsovL04tsnXOKMrPTQUAfZ8ZFkgAAAA%3D"
         },
         {
-            date: "August 24, 2024",
-            time: "7:00 PM Doors",
-            venue: "Cobra Lounge",
-            city: "Chicago, IL",
-            ticket: "https://dice.fm/partner/dice/event/l88bqb-marvin-stumbles-mangoland-joytrip-big-fans-24th-aug-cobra-lounge-chicago-tickets?dice_id=3565462&dice_channel=web&dice_tags=organic&dice_campaign=DICE&dice_feature=mio_marketing"
+            date: "February 21, 2025",
+            time: "",
+            venue: "Underground Lounge",
+            city: "Chicago, IL"
+        },
+        {
+            date: "April 4, 2025",
+            time: "",
+            venue: "Cafe Mustache",
+            city: "Chicago, IL"
         }
         ];
 
