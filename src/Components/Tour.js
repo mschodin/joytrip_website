@@ -4,23 +4,46 @@ import './Tour.css';
 function Tour(props) {
     let gigs = [
         {
-            date: "January 30, 2025",
-            time: "6:00 PM",
-            venue: "Raccoon Motel",
-            city: "Davenport, IA",
-            ticket: "https://dice.fm/event/q2ky3o-calculated-wnobletiger-joytrip-baron-von-future-30th-jan-raccoon-motel-davenport-tickets?pid=9fd8409a&_branch_match_id=1401648931666472303&utm_medium=partners_api&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXz8nMy9ZLyUxO1UvL1U9NSjU1SkkxTLQwSrUvyEyxtUxLsTAxsExUqytKTUstKsrMS49PKsovL04tsnXOKMrPTQUAfZ8ZFkgAAAA%3D"
-        },
-        {
-            date: "February 21, 2025",
-            time: "",
-            venue: "Underground Lounge",
-            city: "Chicago, IL"
-        },
-        {
             date: "April 4, 2025",
-            time: "",
+            time: "7:00-9:00pm",
             venue: "Cafe Mustache",
             city: "Chicago, IL"
+        },
+        {
+            date: "April 5, 2025",
+            time: "8:00-9:30pm",
+            venue: "Elray's Live and Dive",
+            city: "Iowa City, IA"
+        },
+        {
+            date: "May 23, 2025",
+            time: "8:00-11:15pm",
+            venue: "Little Bear Saloon",
+            city: "Evergreen, CO"
+        },
+        {
+            date: "May 24, 2025",
+            time: "9:00am-12:00pm",
+            venue: "City Park Farmers Market",
+            city: "Denver, CO"
+        },
+        {
+            date: "May 24, 2025",
+            time: "6:00-8:00pm",
+            venue: "Spirit Hounds",
+            city: "Lyons, CO"
+        },
+        {
+            date: "May 25, 2025",
+            time: "7:30pm",
+            venue: "Skylark Lounge",
+            city: "Denver, CO"
+        },
+        {
+            date: "August 8, 2025",
+            time: "",
+            venue: "Rock the Chalk",
+            city: "Iowa City, IA"
         }
         ];
 
