@@ -4,10 +4,11 @@ import KOPB from '../Music/keep_on_passing_by_master.wav';
 import MrTimeArt from '../Assets/mr-time-art.jpg';
 import LetMeLayArt from '../Assets/let-me-lay-art.jpg';
 import OhNoArt from '../Assets/Oh No Cover Art.jpg';
+import LeavingStateArt from '../Assets/Cover Art Leaving State.png';
 import SlushArt from '../Assets/Slush Cover.jpg';
 import SpotifyIcon from '../Assets/icons8-spotify.svg';
 import InstagramIcon from '../Assets/icons8-instagram.svg';
-import TiktokIcon from '../Assets/icons8-tiktok.svg';
+import ShoppingCartIcon from '../Assets/icons8-shopping-cart-50.png';
 import YoutubeIcon from '../Assets/icons8-youtube.svg';
 import AppleMusicIcon from '../Assets/icons8-apple-music.svg';
 import EmailIcon from '../Assets/icons8-email.svg';
@@ -25,24 +26,24 @@ function Home(props) {
             </div> */}
             <div className="home-content">
                 <div className='home-column1'>
-                    <img src={OhNoArt} alt="Your Image" className="mrtime-picture"/>
-                    <div className="album-title">Oh No!</div>
+                    <img src={LeavingStateArt} alt="Your Image" className="mrtime-picture"/>
+                    <div className="album-title">leaving state</div>
                     <div className="out-now">OUT NOW</div>
                 </div>
                 <div className='home-column2'>
-                    <iframe className='home-spotify-player' src="https://open.spotify.com/embed/track/0DtUae3Q3u5J4TYnkqr3ml?utm_source=generator" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe className='home-spotify-player' src="https://open.spotify.com/embed/album/1sfVxRscd5XCQuH2gqCFlR?utm_source=generator" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     <div className="socials">
                         <a className="social-icon" href="https://open.spotify.com/artist/2SYn55YfIWrAereupJ7KVt?si=u7fY4EIvSmKJZYX6KdE5Mw" target="_blank">
                             <img src={SpotifyIcon} />
                         </a>
-                        <a className="social-icon" href="mailto:joytriptheband@gmail.com" target="_blank">
+                        <a className="social-icon" href="mailto:booking@joytripband.com" target="_blank">
                             <img src={EmailIcon} />
+                        </a>
+                        <a className="social-icon" href="https://joytripband.square.site" target="_blank">
+                            <img src={ShoppingCartIcon} />
                         </a>
                         <a className="social-icon" href="https://www.instagram.com/joytripband/" target="_blank">
                             <img src={InstagramIcon} />
-                        </a>
-                        <a className="social-icon" href="https://www.tiktok.com/@joytripband" target="_blank">
-                            <img src={TiktokIcon} />
                         </a>
                         <a className="social-icon" href="https://www.youtube.com/@JoytripBand" target="_blank">
                             <img src={YoutubeIcon} />

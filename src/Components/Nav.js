@@ -38,6 +38,9 @@ function NavBar(props) {
                         duration={500}
                     >Contact</Link>
                 </li>
+                <li className="navLink">
+                    <a activeClass="active" class="external-link" href="https://joytripband.square.site">Merch</a>
+                </li>
             </ul>
             <hr className="navline"/>
         </>

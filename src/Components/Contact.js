@@ -12,9 +12,9 @@ function Contact(props) {
                     <div className='email-text-area'>
                         <div>
                             <div className='email-header'>Contact us directly at:</div>
-                            <div className='email-addr'>joytriptheband@gmail.com</div>
+                            <div className='email-addr'>booking@joytripband.com</div>
                         </div>
-                        <a className="contact-social-icon" href="mailto:joytriptheband@gmail.com" target="_blank">
+                        <a className="contact-social-icon" href="mailto:booking@joytripband.com" target="_blank">
                             <img src={EmailIcon} className='icon'/>
                         </a>
                     </div>

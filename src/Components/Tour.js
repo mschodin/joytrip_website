@@ -4,45 +4,15 @@ import './Tour.css';
 function Tour(props) {
     let gigs = [
         {
-            date: "April 4, 2025",
-            time: "7:00-9:00pm",
-            venue: "Cafe Mustache",
-            city: "Chicago, IL"
-        },
-        {
-            date: "April 5, 2025",
-            time: "8:00-9:30pm",
-            venue: "Elray's Live and Dive",
+            date: "August 8, 2025",
+            time: "5:00 PM",
+            venue: "Rock the Chalk",
             city: "Iowa City, IA"
         },
         {
-            date: "May 23, 2025",
-            time: "8:00-11:15pm",
-            venue: "Little Bear Saloon",
-            city: "Evergreen, CO"
-        },
-        {
-            date: "May 24, 2025",
-            time: "9:00am-12:00pm",
-            venue: "City Park Farmers Market",
-            city: "Denver, CO"
-        },
-        {
-            date: "May 24, 2025",
-            time: "6:00-8:00pm",
-            venue: "Spirit Hounds",
-            city: "Lyons, CO"
-        },
-        {
-            date: "May 25, 2025",
-            time: "7:30pm",
-            venue: "Skylark Lounge",
-            city: "Denver, CO"
-        },
-        {
             date: "August 8, 2025",
-            time: "",
-            venue: "Rock the Chalk",
+            time: "8:00 PM",
+            venue: "Gabes",
             city: "Iowa City, IA"
         }
         ];
