@@ -3,18 +3,12 @@ import './Tour.css';
 
 function Tour(props) {
     let gigs = [
-        {
-            date: "August 8, 2025",
-            time: "5:00 PM",
-            venue: "Rock the Chalk",
-            city: "Iowa City, IA"
-        },
-        {
-            date: "August 8, 2025",
-            time: "8:00 PM",
-            venue: "Gabes",
-            city: "Iowa City, IA"
-        }
+        // {
+        //     date: "TBD",
+        //     time: "",
+        //     venue: "",
+        //     city: ""
+        // }
         ];
 
     let gigsContent = [];
@@ -51,6 +45,7 @@ function Tour(props) {
         <>
             <div className="tour-content">
                 <h2 className='tour-table-header'>See Joytrip Live</h2>
+                <p>We're currently in the studio cooking up some new groovy music for ya, stay tuned!</p>
                 <div className="tour-table">
                     {gigsContent}
                 </div>
