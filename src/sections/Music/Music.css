@@ -1,0 +1,215 @@
+/* ═══════════════════════════════════════════════════════════════
+   Music.css — Discography grid section
+   Mobile-first: default styles target ≤ 768px.
+   Tablet/desktop breakpoints follow.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Section container ─────────────────────────────────────────── */
+
+.music {
+  width: 100%;
+}
+
+/* ── Section header ────────────────────────────────────────────── */
+
+.music-header {
+  margin-bottom: var(--space-6);
+}
+
+.music-eyebrow {
+  /* all properties inherited from .eyebrow utility */
+}
+
+.music-display {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-md);
+  font-weight: 700;
+  line-height: var(--lh-display);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+/* ── Grid ──────────────────────────────────────────────────────── */
+
+.music-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .music-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .music-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Album tile ────────────────────────────────────────────────── */
+
+.music-tile {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: var(--radius-md);
+  /* Initial box-shadow — Framer Motion overrides on hover */
+  box-shadow: 0 4px 16px rgba(26, 23, 20, 0.10);
+  cursor: default;
+  will-change: transform;
+  /* Suppress outline from motion.div focus on click */
+  outline: none;
+}
+
+/* ── Cover image ────────────────────────────────────────────────── */
+
+.music-tile-cover-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background-color: var(--color-bg-alt);
+}
+
+.music-tile-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Subtle warm overlay via mix-blend-mode so images feel cohesive */
+  /* Using an overlay div approach per brief is preferred for perf,
+     but for album art (small images) mix-blend-mode is acceptable */
+}
+
+/* ── Cover placeholder (no art available) ───────────────────────── */
+
+.music-tile-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.music-tile-cover-placeholder-text {
+  font-family: var(--font-display, serif);
+  font-size: 1rem;
+  color: var(--color-text-muted, #888);
+  line-height: 1.3;
+}
+
+/* ── Tile meta area ─────────────────────────────────────────────── */
+
+.music-tile-meta {
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  background-color: var(--color-bg);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  flex: 1;
+}
+
+.music-tile-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-body-lg);
+  font-weight: 600;
+  line-height: var(--lh-body);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.music-tile-year {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--color-ink-soft);
+  margin: 0 0 var(--space-3) 0;
+}
+
+/* ── Streaming icon row ─────────────────────────────────────────── */
+
+.music-tile-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.music-tile-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  /* Subtle hover state for the icon itself */
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0.8;
+}
+
+.music-tile-link-icon:hover,
+.music-tile-link-icon:focus-visible {
+  opacity: 1;
+  transform: scale(1.12);
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.music-tile-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  filter: invert(1);
+}
+
+/* ── Editorial callout ──────────────────────────────────────────── */
+
+.music-editorial {
+  margin: var(--space-8) auto 0;
+  padding-left: var(--space-5);
+  border-left: 3px solid var(--color-accent);
+}
+
+.music-editorial-eyebrow {
+  /* font-family, font-size, font-weight, text-transform, color
+     inherited from .eyebrow utility */
+  letter-spacing: 0.1em; /* tighter than default 0.12em */
+  font-variant: small-caps;
+  margin: 0 0 var(--space-3) 0; /* larger bottom margin than default space-2 */
+}
+
+.music-editorial-quote {
+  font-family: var(--font-display);
+  font-size: var(--fs-body-lg);
+  font-style: italic;
+  line-height: var(--lh-body);
+  color: var(--color-ink-soft);
+  margin: 0;
+  padding: 0;
+  border: none; /* Reset browser blockquote border */
+}
+
+/* ── Mobile adjustments (≤ 768px) ──────────────────────────────── */
+
+@media (max-width: 768px) {
+  .music-display {
+    font-size: var(--fs-display-sm);
+  }
+
+  .music-editorial {
+    margin-top: var(--space-6);
+    padding-left: var(--space-4);
+  }
+
+  .music-editorial-quote {
+    font-size: var(--fs-body);
+  }
+
+  /* Disable tile hover lift on touch devices — no real hover state */
+  .music-tile {
+    box-shadow: 0 4px 16px rgba(26, 23, 20, 0.10);
+  }
+}

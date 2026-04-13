@@ -1,80 +1,331 @@
-@import './Palette.css';
+/*
+ * Nav.css — Warm modern sticky navigation bar.
+ * Uses design tokens from src/shared/tokens.css only — no hex literals.
+ *
+ * Breakpoints:
+ *   Mobile   : max-width 768px  → hamburger + slide-down sheet
+ *   Desktop  : min-width 769px  → horizontal link row + pill Merch button
+ */
 
-.navLink {  
-    display: inline-flex;
-    margin-right: 10px;
-    font-size: 1.5em;
-    float: right;
-    color: white;
-    text-decoration: none;
-    font-weight: 400;
-    padding-top: .4em;
-    padding-bottom: .4em;
-    padding-left: .4em;
-    padding-right: .4em;
-
-    font-weight: 100;
-    font-family:SergioTrendy;
-
-    height: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
-    float: right;
+/* ─── Nav Container ─── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-height);           /* 72px */
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-accent-soft);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-4);
+  transition: box-shadow 0.2s ease;
 }
 
-.navLink:hover {
-    color:lightgray;
-    filter:grayscale(50);
-    cursor: pointer;
+.nav--scrolled {
+  border-bottom-color: transparent;
+  box-shadow: var(--shadow-sm);
 }
 
-.customNavBar {
-    width: 100%;
-    height: 2.5rem;
+/* ─── Inner Layout ─── */
+.nav__inner {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ─── Wordmark ─── */
+.nav__wordmark {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-sm);     /* 28px */
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 8px;
+  cursor: pointer;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav__wordmark:hover {
+  color: var(--color-accent);
+}
+
+.nav__wordmark:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Desktop Links List ─── */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Individual Nav Link Button ─── */
+.nav__link-btn {
+  background: none;
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);           /* 16px, per spec */
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Animated underline */
+.nav__link-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: var(--space-3);
+  right: var(--space-3);
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+  border-radius: var(--radius-pill);
+}
+
+.nav__link-btn:hover {
+  color: var(--color-accent);
+}
+
+.nav__link-btn:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active state — section is in view */
+.nav__link-btn--active {
+  color: var(--color-accent);
+}
+
+.nav__link-btn--active::after {
+  transform: scaleX(1);
+}
+
+/* Focus-visible — 2px amber outline */
+.nav__link-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Merch Pill Button (desktop) ─── */
+.nav__merch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  margin-left: var(--space-3);
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.nav__merch-btn:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.nav__merch-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ─── Hamburger Button (mobile only) ─── */
+.nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: var(--space-2);
+  cursor: pointer;
+  color: var(--color-ink);
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__hamburger:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.nav__hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-ink);
+  border-radius: var(--radius-pill);
+  transform-origin: center;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Hamburger → X animation */
+.nav__hamburger--open .nav__hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav__hamburger--open .nav__hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav__hamburger--open .nav__hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── Mobile Menu Sheet ─── */
+.nav__mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-accent-soft);
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  z-index: 49;
+  box-shadow: var(--shadow-md);
+}
+
+.nav__mobile-menu--open {
+  display: block;
+}
+
+/* ─── Mobile Links List ─── */
+.nav__mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.nav__mobile-link-btn {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: var(--space-3) var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--color-ink);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav__mobile-link-btn:hover {
+  background: var(--color-bg-alt);
+}
+
+.nav__mobile-link-btn--active {
+  background: var(--color-bg-alt);
+  color: var(--color-accent);
+}
+
+.nav__mobile-link-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ─── Mobile Merch Button ─── */
+.nav__mobile-merch-btn {
+  display: block;
+  margin-top: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border-radius: var(--radius-pill);
+  transition: background 0.2s ease;
+}
+
+.nav__mobile-merch-btn:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.nav__mobile-merch-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ─── Responsive: Mobile breakpoint ─── */
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+  }
+
+  .nav__hamburger {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 0.5rem;
-    justify-content: right;
-    padding-left: 0;
+  }
 }
 
-.navline {
-    /* background: linear-gradient(to left, white, var(--paletteColor3Dark)); */
-    background: linear-gradient(to left, white, #F9993b);
-    border: none;
-    width: 80%;
-    margin-right: 0;
-    margin-left: auto;
-    height: 2px !important;
-    /* margin-top: -10px; */
-    /* margin-top: 0px; */
-    /* margin-bottom: 0.6rem; */
-}
+/* ─── Reduced-motion overrides ─── */
+@media (prefers-reduced-motion: reduce) {
+  .nav__link-btn::after,
+  .nav__link-btn,
+  .nav__wordmark,
+  .nav__merch-btn,
+  .nav__hamburger-line,
+  .nav__mobile-link-btn,
+  .nav__mobile-merch-btn,
+  .nav {
+    transition: none;
+  }
 
-.external-link {
-    text-decoration: none;
-    color: white;
-}
+  /* Don't animate the hamburger → X transform */
+  .nav__hamburger--open .nav__hamburger-line:nth-child(1),
+  .nav__hamburger--open .nav__hamburger-line:nth-child(2),
+  .nav__hamburger--open .nav__hamburger-line:nth-child(3) {
+    transition: none;
+  }
 
-.external-link:hover {
-    color: #ff9a9a;
-}
-
-@media (max-width: 1000px) {
-    .customNavBar {
-
-    }
-}
-
-@media (max-width: 500px) {
-    .navLink {
-        padding-right: 0.1rem;
-        padding-left: 0.1rem;
-        font-size: 1.35em;
-    }
-
-    /* .navLink {
-        font-size: 1rem;
-        margin-top: 6px;
-    } */
+  /* Don't translate the Merch button on hover */
+  .nav__merch-btn:hover {
+    transform: none;
+  }
 }

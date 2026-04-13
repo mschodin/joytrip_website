@@ -25,6 +25,22 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Joytrip</title>
+    <!-- Google Analytics 4 — ID is injected at build time via REACT_APP_GA4_ID. -->
+    <!-- TODO: Set REACT_APP_GA4_ID in the environment before building for production. -->
+    <script>
+      (function() {
+        var id = '%REACT_APP_GA4_ID%';
+        if (!id || id.indexOf('REACT_APP_GA4_ID') !== -1) return;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', id);
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
