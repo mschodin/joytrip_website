@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PhotoAlbum from 'react-photo-album';
+import { motion, useReducedMotion } from 'framer-motion';
 import Lightbox from 'yet-another-react-lightbox';
 import Counter from 'yet-another-react-lightbox/plugins/counter';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
@@ -16,12 +16,6 @@ import './Gallery.css';
 // Helpers
 // ---------------------------------------------------------------------------
 
-/**
- * Build a react-photo-album v2 photo entry from an imageManifest entry.
- * @param {string} name  - key in imageManifest
- * @param {string} alt   - accessible description
- * @returns {{ src, width, height, srcSet, alt }}
- */
 function buildPhoto(name, alt) {
   const entry = imageManifest[name];
   if (!entry) {
@@ -30,16 +24,11 @@ function buildPhoto(name, alt) {
   }
   const jpgs = entry.jpg;
   const widths = entry.widths;
-
-  // Use the largest jpg as the primary src
   const largestJpg = jpgs[jpgs.length - 1];
   const naturalW = entry.naturalWidth;
   const naturalH = entry.naturalHeight;
-
-  // Compute displayed height proportional to naturalWidth/naturalHeight
   const aspectRatio = naturalW / naturalH;
 
-  // srcSet: map each variant to { src, width, height }
   const srcSet = jpgs.map((src, i) => {
     const w = widths[i];
     return { src, width: w, height: Math.round(w / aspectRatio) };
@@ -56,8 +45,6 @@ function buildPhoto(name, alt) {
 
 // ---------------------------------------------------------------------------
 // Photo data
-// PHOTO SWAP: edit the list below to add/remove gallery photos.
-// Photo names must exist in src/shared/imageManifest.js (run `npm run images` after dropping new files in src/Assets/raw/).
 // ---------------------------------------------------------------------------
 const PHOTOS = [
   buildPhoto('joytrip-sunrise-photo', 'Joytrip at sunrise'),
@@ -66,12 +53,10 @@ const PHOTOS = [
   buildPhoto('vue-full-band', 'Joytrip full band at Vue'),
 ].filter(Boolean);
 
-// Lightbox slides: one { src } entry per photo using the largest jpg
 const LIGHTBOX_SLIDES = PHOTOS.map((p) => ({ src: p.src }));
 
 // ---------------------------------------------------------------------------
-// Videos — add or reorder entries here; each object needs { src, title }.
-// VIDEO SWAP: update src URLs below to change which videos are embedded.
+// Videos
 // ---------------------------------------------------------------------------
 const VIDEOS = [
   {
@@ -93,10 +78,35 @@ const VIDEOS = [
 ];
 
 // ---------------------------------------------------------------------------
+// Animation variants
+// ---------------------------------------------------------------------------
+
+const bentoContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const bentoCellVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+// ---------------------------------------------------------------------------
 // Component
 // ---------------------------------------------------------------------------
 export default function Gallery() {
   const [lightbox, setLightbox] = useState({ open: false, index: 0 });
+  const prefersReducedMotion = useReducedMotion();
 
   function openLightbox(index) {
     setLightbox({ open: true, index });
@@ -106,50 +116,108 @@ export default function Gallery() {
     setLightbox((prev) => ({ ...prev, open: false }));
   }
 
+  // Split videos: first is featured, rest go in the grid
+  const featuredVideo = VIDEOS[0];
+  const remainingVideos = VIDEOS.slice(1);
+
+  // Hover props for bento cells (disabled if reduced motion)
+  const cellHover = prefersReducedMotion
+    ? {}
+    : {
+        whileHover: {
+          scale: 1.02,
+          rotate: 0.8,
+          transition: { duration: 0.3, ease: 'easeOut' },
+        },
+      };
+
   return (
     <section className="gallery-section" id="section-gallery" aria-label="Gallery">
       {/* Section header */}
       <Reveal delay={0}>
         <p className="eyebrow gallery-eyebrow" aria-hidden="true">GALLERY</p>
         <h2 className="gallery-heading">Live &amp; lens</h2>
+        <p className="gallery-tagline">
+          3 years of music, road trips, and late nights.
+        </p>
       </Reveal>
 
-      {/* ---------------------------------------------------------------- */}
-      {/* Videos block                                                      */}
-      {/* ---------------------------------------------------------------- */}
-      <div className="gallery-videos">
-        {VIDEOS.map((video, i) => (
-          <Reveal key={video.src} delay={0.1 + i * 0.1} className="gallery-video-wrap">
-            <div className="gallery-video-aspect">
-              <iframe
-                src={video.src}
-                title={video.title}
-                frameBorder="0"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+      {/* ── Featured video (hero, full width) ── */}
+      <Reveal delay={0.1}>
+        <div className="gallery-featured-video">
+          <div className="gallery-video-aspect">
+            <iframe
+              src={featuredVideo.src}
+              title={featuredVideo.title}
+              frameBorder="0"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </Reveal>
+
+      {/* ── Remaining videos grid ── */}
+      <div className="gallery-videos-grid">
+        {remainingVideos.map((video, i) => (
+          <Reveal key={video.src} delay={0.1 + i * 0.08}>
+            <div className="gallery-video-card">
+              <div className="gallery-video-aspect">
+                <iframe
+                  src={video.src}
+                  title={video.title}
+                  frameBorder="0"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </Reveal>
         ))}
       </div>
 
-      {/* ---------------------------------------------------------------- */}
-      {/* Photo grid                                                        */}
-      {/* ---------------------------------------------------------------- */}
-      <Reveal delay={0.2} className="gallery-grid-wrap">
-        <PhotoAlbum
-          layout="rows"
-          photos={PHOTOS}
-          targetRowHeight={280}
-          spacing={8}
-          onClick={({ index }) => openLightbox(index)}
-        />
-      </Reveal>
+      {/* ── Bento photo grid ── */}
+      <motion.div
+        className="gallery-bento"
+        variants={prefersReducedMotion ? {} : bentoContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }}
+      >
+        {PHOTOS.map((photo, i) => (
+          <motion.div
+            key={photo.src}
+            className="gallery-bento-cell"
+            variants={prefersReducedMotion ? {} : bentoCellVariants}
+            {...cellHover}
+            onClick={() => openLightbox(i)}
+            role="button"
+            tabIndex={0}
+            aria-label={`View ${photo.alt}`}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox(i);
+              }
+            }}
+          >
+            <img
+              src={photo.src}
+              srcSet={photo.srcSet
+                ?.map((s) => `${s.src} ${s.width}w`)
+                .join(', ')}
+              sizes="(max-width: 768px) 50vw, 25vw"
+              alt={photo.alt}
+              loading="lazy"
+            />
+            <div className="gallery-bento-grain" aria-hidden="true" />
+          </motion.div>
+        ))}
+      </motion.div>
 
-      {/* ---------------------------------------------------------------- */}
-      {/* Lightbox                                                          */}
-      {/* ---------------------------------------------------------------- */}
+      {/* ── Lightbox ── */}
       <Lightbox
         open={lightbox.open}
         close={closeLightbox}
@@ -164,9 +232,3 @@ export default function Gallery() {
     </section>
   );
 }
-
-/*
-SMOKE-IMPORTS:
-- Reveal
-- imageManifest
-*/
