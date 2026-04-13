@@ -1,12 +1,18 @@
 import React from "react";
 import "./Section.css";
 
-export default function Section({ content, id }) {
+/**
+ * Section — layout shell for each page section.
+ *
+ * Props:
+ *   id        {string}  — HTML id used for scroll navigation
+ *   content   {node}    — the section's content component
+ *   className {string}  — optional extra CSS class (e.g. "section--alt" for cream background)
+ */
+export default function Section({ content, id, className = '' }) {
   return (
-    <div className={"section"}>
-      <div className="section-content" id={id}>
-        {content}
-      </div>
-    </div>
+    <section id={id} className={`section ${className}`}>
+      <div className="section-content">{content}</div>
+    </section>
   );
 }

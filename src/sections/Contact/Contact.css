@@ -1,0 +1,145 @@
+/*
+ * Contact.css — Styles for the Contact / booking section.
+ *
+ * Mobile-first: base styles target ≤ 767px.
+ * Tablet breakpoint:  @media (min-width: 768px).
+ * Desktop breakpoint: @media (min-width: 1024px).
+ *
+ * Background is NOT set on .contact — Phase 2's <Section section--alt>
+ * wrapper provides the zebra rhythm via --color-bg-alt.
+ *
+ * Layer architecture:
+ *   .contact             — section shell, max-width constrained
+ *   .contact-eyebrow     — small-caps amber label
+ *   .contact-heading     — Fraunces display heading
+ *   .contact-lede        — Inter body intro copy
+ *   .contact-direct      — centered email card
+ *   .contact-direct-label — small-caps eyebrow inside card
+ *   .contact-email       — the mailto anchor
+ */
+
+/* ─── Section shell ─── */
+.contact {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-4);
+  color: var(--color-ink);
+}
+
+/* ─── Eyebrow ─── */
+.contact-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  line-height: var(--lh-body);
+  margin: 0 0 var(--space-2);
+}
+
+/* ─── Heading ─── */
+.contact-heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-sm); /* mobile: 28px */
+  font-weight: 700;
+  line-height: var(--lh-display);
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-4);
+}
+
+/* ─── Lede ─── */
+.contact-lede {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  color: var(--color-ink-soft);
+  line-height: var(--lh-body);
+  max-width: 640px;
+  margin: 0 0 var(--space-6);
+}
+
+/* ─── Direct email card ─── */
+.contact-direct {
+  max-width: 600px;
+  margin: var(--space-5) 0 0;
+  text-align: left;
+  background: var(--color-bg);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+/* ─── Direct email label ─── */
+.contact-direct-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+/* ─── Email anchor ─── */
+.contact-email {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg); /* mobile: 18px */
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.contact-email:hover,
+.contact-email:focus-visible {
+  color: var(--color-accent-soft);
+  text-decoration: underline;
+  outline: none;
+}
+
+.contact-email:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Tablet (≥ 768px) ─── */
+@media (min-width: 768px) {
+  .contact {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .contact-heading {
+    font-size: var(--fs-display-md); /* 40px */
+  }
+}
+
+/* ─── Desktop (≥ 1024px) ─── */
+@media (min-width: 1024px) {
+  .contact {
+    padding: var(--space-9) var(--space-5);
+  }
+
+  .contact-heading {
+    font-size: var(--fs-display-lg); /* 56px */
+  }
+
+  .contact-email {
+    font-size: var(--fs-display-sm); /* 28px */
+  }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .contact-email {
+    transition: none;
+  }
+}

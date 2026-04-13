@@ -1,0 +1,311 @@
+/*
+ * Tour.css — Styles for the Tour dates section.
+ *
+ * Mobile-first: base styles target ≤ 768px.
+ * Desktop breakpoint: @media (min-width: 768px).
+ *
+ * Two visual states:
+ *   .tour-empty      — no upcoming shows; mailing-list funnel
+ *   .tour-populated  — card list of upcoming shows
+ */
+
+/* ─── Section shell ─── */
+.tour-section {
+  width: 100%;
+}
+
+/* ─── Shared section header ─── */
+.tour-header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.tour-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-2);
+  line-height: var(--lh-body);
+}
+
+.tour-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-sm);  /* mobile */
+  font-weight: 700;
+  line-height: var(--lh-display);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+/* ─── Empty state ─── */
+.tour-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tour-empty-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
+  gap: var(--space-4);
+  max-width: 560px;
+  width: 100%;
+}
+
+.tour-coming-soon {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-sm);  /* mobile */
+  font-style: italic;
+  font-weight: 400;
+  line-height: var(--lh-display);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.tour-sub-copy {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+/* Down-arrow chevron */
+.tour-chevron-wrap {
+  display: flex;
+  justify-content: center;
+  color: var(--color-accent);
+  /* Gentle bounce animation to draw the eye toward the CTA */
+  animation: tour-bounce 2s ease-in-out infinite;
+}
+
+.tour-chevron {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+@keyframes tour-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-chevron-wrap {
+    animation: none;
+  }
+}
+
+/* CTA button — amber pill, same style as Hero */
+.tour-cta {
+  display: inline-block;
+  width: 100%;  /* mobile: full-width */
+  text-align: center;
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: var(--space-3) var(--space-5);
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.12s ease;
+}
+
+.tour-cta:hover,
+.tour-cta:focus-visible {
+  background: var(--color-accent-soft);
+  outline: none;
+}
+
+.tour-cta:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.tour-cta:active {
+  transform: scale(0.98);
+}
+
+/* ─── Populated state ─── */
+.tour-populated {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tour-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 720px;
+}
+
+/* ─── Show card ─── */
+.tour-card {
+  display: flex;
+  flex-direction: column;   /* mobile: stacked */
+  gap: var(--space-3);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  border: 1px solid transparent;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 16px rgba(212, 165, 116, 0.18);
+}
+
+/* Date column */
+.tour-card-date {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.tour-card-month-day {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-sm);
+  font-weight: 700;
+  line-height: var(--lh-display);
+  color: var(--color-ink);
+}
+
+.tour-card-year {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--color-ink-soft);
+  line-height: var(--lh-body);
+}
+
+/* Venue info */
+.tour-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex-grow: 1;
+}
+
+.tour-card-venue {
+  font-family: var(--font-display);
+  font-size: var(--fs-body-lg);
+  font-weight: 600;
+  line-height: var(--lh-display);
+  color: var(--color-ink);
+}
+
+.tour-card-city {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--color-ink-soft);
+  line-height: var(--lh-body);
+}
+
+.tour-card-time {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--color-accent);
+  line-height: var(--lh-body);
+}
+
+/* Ticket action */
+.tour-card-action {
+  display: flex;
+  align-items: flex-start;
+}
+
+.tour-ticket-btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-pill);
+  padding: var(--space-2) var(--space-4);
+  text-decoration: none;
+  transition: background 0.18s ease, transform 0.12s ease;
+  white-space: nowrap;
+}
+
+.tour-ticket-btn:hover,
+.tour-ticket-btn:focus-visible {
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+  text-decoration: none;
+  outline: none;
+}
+
+.tour-ticket-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.tour-ticket-btn:active {
+  transform: scale(0.97);
+}
+
+.tour-card-free {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ─── Desktop (≥ 768px) ─── */
+@media (min-width: 768px) {
+  /* Section header */
+  .tour-title {
+    font-size: var(--fs-display-md);
+  }
+
+  /* Empty state */
+  .tour-coming-soon {
+    font-size: var(--fs-display-md);
+  }
+
+  .tour-sub-copy {
+    font-size: var(--fs-body-lg);
+  }
+
+  .tour-cta {
+    width: auto;  /* desktop: inline, not full-width */
+  }
+
+  /* Populated: card layout switches to horizontal row */
+  .tour-card {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-5);
+  }
+
+  .tour-card-date {
+    min-width: 140px;
+    flex-shrink: 0;
+  }
+
+  .tour-card-action {
+    flex-shrink: 0;
+    align-items: center;
+  }
+}

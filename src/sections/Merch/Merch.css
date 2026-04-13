@@ -1,0 +1,173 @@
+/*
+ * Merch.css — Full-bleed editorial Merch section. Mobile-first.
+ * Layer order: photo → sepia wash → dark gradient → content.
+ * rgba literals in .merch-overlay-gradient: approved exception (same as Hero.css L69-81).
+ */
+
+/* ─── Section shell ─── */
+.merch {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-7) 0;
+}
+
+/* ─── Layer 1: Background photo ─── */
+.merch-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.merch-bg picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.merch-bg img,
+.merch-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* ─── Layer 2: Warm sepia wash ─── */
+.merch-overlay-sepia {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-overlay-warm);
+  pointer-events: none;
+}
+
+/* ─── Layer 3: Dark gradient for text legibility ─── */
+/* NOTE: rgba literals approved — see file-level comment. */
+.merch-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 23, 20, 0.15) 0%,
+    rgba(26, 23, 20, 0.55) 70%,
+    rgba(26, 23, 20, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* ─── Layer 4: Content ─── */
+.merch-content {
+  position: relative;
+  z-index: 3;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-7) var(--space-4);
+  text-align: center;
+}
+
+/* ── Eyebrow ── */
+.merch-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-3);
+  line-height: var(--lh-body);
+}
+
+/* ── Headline ── */
+.merch-headline {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-sm);
+  font-weight: 700;
+  line-height: var(--lh-display);
+  color: var(--color-bg);
+  margin: 0 0 var(--space-4);
+  letter-spacing: -0.01em;
+}
+
+/* ── Sub-line ── */
+.merch-subline {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  color: var(--color-bg);
+  opacity: 0.88;
+  line-height: var(--lh-body);
+  max-width: 520px;
+  margin: 0 auto var(--space-5);
+}
+
+/* ── CTA button ── */
+.merch-cta {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  padding: var(--space-3) var(--space-5);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.merch-cta:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.merch-cta:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ─── Tablet (≥ 768px) ─── */
+@media (min-width: 768px) {
+  .merch {
+    padding: var(--space-8) 0;
+  }
+
+  .merch-content {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .merch-headline {
+    font-size: var(--fs-display-md);
+  }
+}
+
+/* ─── Desktop (≥ 1024px) ─── */
+@media (min-width: 1024px) {
+  .merch {
+    padding: var(--space-8) 0;
+  }
+
+  .merch-content {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .merch-headline {
+    font-size: var(--fs-display-lg);
+  }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .merch-cta {
+    transition: none;
+  }
+
+  .merch-cta:hover {
+    transform: none;
+  }
+}

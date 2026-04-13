@@ -1,63 +1,38 @@
 import './App.css';
 import React from 'react';
 import NavBar from './Components/Nav';
-import Home from './Components/Home';
-import Content from './Components/Content';
-import AboutUs from './Components/AboutUs';
 import Section from './Components/Section';
-import Tour from './Components/Tour';
-import Contact from './Components/Contact';
-import "./fonts/SergiotrendyRegular-p72da.ttf";
-import "./fonts/Nahista.ttf";
+import GrainDefs from './shared/GrainDefs';
+
+import Hero from './sections/Hero/Hero';
+import Music from './sections/Music/Music';
+import Tour from './sections/Tour/Tour';
+import About from './sections/About/About';
+import Gallery from './sections/Gallery/Gallery';
+import MailingList from './sections/MailingList/MailingList';
+import Merch from './sections/Merch/Merch';
+import Contact from './sections/Contact/Contact';
 
 function App() {
-  var home = <Home />;
-  var content = <Content />;
-  var aboutUs = <AboutUs />;
-  var tour = <Tour />;
-  var contact = <Contact />;
-
   return (
     <div className="App">
-        <NavBar/>
-        <div className="section0-background">
-          <Section
-            content={home}
-            id="section0"
-            className="section0-background"
-          />
-        </div>
-        <div className="section1-background">
-          <Section
-            content={content}
-            id="section1"
-            className="section1-background"
-          />
-        </div>
-        <div className="section2-background">
-          <Section
-            content={aboutUs}
-            id="section2"
-            className="section2-background"
-            />
-        </div>
-        <div className="section3-background">
-          <Section
-            content={tour}
-            id="section3"
-            className="section3-background"
-            />
-        </div>
-        <div className="section4-background">
-          <Section
-            content={contact}
-            id="section4"
-            className="section4-background"
-            />
-        </div>
+      {/* SVG grain filter — mounted once, referenced via CSS */}
+      <GrainDefs />
+
+      {/* Sticky navigation */}
+      <NavBar />
+
+      {/* Page sections — IDs used by NavBar's IntersectionObserver */}
+      <Section id="section-hero"         content={<Hero />} />
+      <Section id="section-music"        content={<Music />}        className="section--alt" />
+      <Section id="section-tour"         content={<Tour />} />
+      <Section id="section-about"        content={<About />}        className="section--alt" />
+      <Section id="section-gallery"      content={<Gallery />} />
+      <Section id="section-mailing-list" content={<MailingList />}  className="section--alt" />
+      <Section id="section-merch"        content={<Merch />} />
+      <Section id="section-contact"      content={<Contact />}      className="section--alt" />
     </div>
   );
 }
 
 export default App;
-

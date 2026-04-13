@@ -1,0 +1,23 @@
+/*
+ * fonts.css — Self-hosted variable font declarations.
+ * Loaded via src/index.js before index.css so fonts are
+ * available to all components.
+ */
+
+/* ─── Fraunces Variable ─── */
+@font-face {
+  font-family: 'Fraunces';
+  src: url('../fonts/Fraunces-Variable.woff2') format('woff2');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Inter Variable ─── */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Variable.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}

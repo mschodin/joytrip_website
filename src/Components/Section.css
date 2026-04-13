@@ -1,28 +1,27 @@
+/*
+ * Section.css — Layout shell for page sections.
+ * Background colors and section-specific overrides belong in
+ * the section component itself, not here.
+ */
+
 .section {
-    width: 70vw;
-    align-items: center;
-    display: inline-flex;
-    height: 100%;
-    padding: 1.2rem;
-    margin: 10vw;
+  scroll-margin-top: var(--nav-height);
+  padding: var(--space-8) var(--space-4);
 }
 
 .section-content {
-    /* align-items: flex-start; */
-    /* display: block; */
-    text-align: left;
-    width: 100%;
-    /* padding: 0rem 3rem; */
-    /* margin: 0 auto; */
-    /* display: inline-flex; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
+  max-width: var(--max-content-width);
+  margin: 0 auto;
 }
 
-@media (max-width: 1300px) {
-    .section {
-        width: calc(100% - 8vw);
-        margin-left: 4vw;
-        margin-right: 4vw;
-    }
+/* Alternate background rhythm — apply to every other section */
+.section--alt {
+  background: var(--color-bg-alt);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-7) var(--space-3);
+  }
 }

@@ -1,0 +1,167 @@
+/*
+ * MailingList.css — Styles for the Text List section with Google Form embed.
+ *
+ * Mobile-first: base styles target ≤ 768px.
+ * Desktop breakpoint: @media (min-width: 1024px).
+ *
+ * Background is NOT set here — Phase 2's <Section section--alt> wrapper
+ * provides --color-bg-alt.
+ *
+ * Layer architecture:
+ *   .mailing-list   — stacking context, section shell
+ *   .ml-vignette    — absolute, warm radial glow behind content
+ *   .ml-grain       — absolute, SVG grain texture
+ *   .ml-content     — relative, z-index above layers; centered block
+ *   .ml-rule        — decorative amber horizontal rule
+ *   .ml-eyebrow     — small-caps amber label
+ *   .ml-headline    — Fraunces display heading
+ *   .ml-subtext     — Inter body copy
+ *   .ml-form-wrap   — wrapper card for the Google Form iframe
+ *   .ml-form        — the iframe itself
+ */
+
+/* ─── Section shell ─── */
+.mailing-list {
+  position: relative;
+  overflow: hidden;
+  /*
+   * Section padding is provided by the wrapping <Section> from Phase 2.
+   * We add a modest vertical pad here only to ensure the vignette and grain
+   * layers have room to breathe when the section is mounted standalone.
+   */
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+}
+
+/* ─── Layer 1: Warm radial vignette ─── */
+.ml-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    var(--color-overlay-warm) 100%
+  );
+  pointer-events: none;
+}
+
+/* ─── Layer 2: Grain texture ─── */
+.ml-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  filter: url(#grain);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* ─── Layer 3: Content block ─── */
+.ml-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+/* ─── Decorative amber rule ─── */
+.ml-rule {
+  width: 80px;
+  height: 2px;
+  background: var(--color-accent);
+  margin: 0 auto;
+  border-radius: var(--radius-pill);
+}
+
+/* ─── Eyebrow ─── */
+.ml-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+/* ─── Main headline ─── */
+.ml-headline {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-md); /* mobile: 40px */
+  font-weight: 600;
+  line-height: var(--lh-display);
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* ─── Sub-copy ─── */
+.ml-subtext {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ─── Form wrapper ─── */
+.ml-form-wrap {
+  max-width: 100%;
+  margin: var(--space-5) auto 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg);
+  width: 100%;
+}
+
+/* ─── Form iframe ─── */
+.ml-form {
+  width: 100%;
+  min-width: 640px;
+  display: block;
+  border: 0;
+  height: 600px;
+}
+
+/* ─── Tablet (≥ 768px) ─── */
+@media (min-width: 768px) {
+  .ml-form {
+    height: 650px;
+  }
+}
+
+/* ─── Desktop (≥ 1024px) ─── */
+@media (min-width: 1024px) {
+  .mailing-list {
+    padding: var(--space-9) var(--space-5);
+  }
+
+  .ml-content {
+    gap: var(--space-6);
+  }
+
+  .ml-headline {
+    font-size: var(--fs-display-lg); /* 56px */
+  }
+
+  .ml-form {
+    height: 700px;
+  }
+}
+
+/* ─── Tablet (768px – 1023px) ─── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mailing-list {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .ml-headline {
+    font-size: var(--fs-display-md);
+  }
+}

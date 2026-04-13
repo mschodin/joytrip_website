@@ -1,0 +1,261 @@
+/* ============================================================
+   About.css — Warm intimate bio section
+   Mobile-first: default styles target ≤ 768px.
+   Desktop breakpoint: @media (min-width: 1024px)
+   ============================================================ */
+
+/* ── Section wrapper ── */
+.about {
+  width: 100%;
+}
+
+/* ── Section header ── */
+.about-header {
+  margin-bottom: var(--space-6);
+}
+
+.about-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-2) 0;
+  line-height: var(--lh-body);
+}
+
+.about-display {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-md);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: var(--lh-display);
+  margin: 0;
+}
+
+/* ── Two-column grid ── */
+/* Mobile: single column — portrait first, then bio */
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ── Portrait column (mobile: full width, above bio) ── */
+.about-portrait-col {
+  order: -1; /* portrait before bio text on mobile */
+  width: 100%;
+}
+
+.about-portrait-reveal {
+  width: 100%;
+}
+
+.about-portrait-frame {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  line-height: 0; /* collapse whitespace under <picture> */
+}
+
+.about-portrait-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+/* Warm sepia overlay for visual unity */
+.about-portrait-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-overlay-warm);
+  pointer-events: none;
+  border-radius: var(--radius-lg);
+}
+
+/* ── Left column: bio + credits ── */
+.about-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Bio paragraphs ── */
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about-bio-paragraph {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  color: var(--color-ink);
+  line-height: var(--lh-body);
+  max-width: 65ch;
+  margin: 0;
+}
+
+/* ── Member credits list ── */
+.about-credits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr; /* single column on mobile */
+  gap: var(--space-2);
+}
+
+.about-credits-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-accent-soft);
+}
+
+.about-credits-item:first-child {
+  border-top: 1px solid var(--color-accent-soft);
+}
+
+.about-credits-name {
+  font-family: var(--font-display);
+  font-size: var(--fs-body);
+  font-variant: small-caps;
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: var(--lh-body);
+}
+
+.about-credits-instruments {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--color-ink-soft);
+  line-height: var(--lh-body);
+}
+
+/* ── Press sub-block ── */
+.about-press-section {
+  margin-top: var(--space-6);
+}
+
+.about-press-divider {
+  height: 1px;
+  background-color: var(--color-accent-soft);
+  margin-bottom: var(--space-6);
+}
+
+.about-press-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-4) 0;
+  line-height: var(--lh-body);
+}
+
+/* Press card: anchor element */
+.about-press-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin: 0 calc(-1 * var(--space-3)); /* optical flush to left edge */
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-press-card:hover,
+.about-press-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent);
+  outline: none;
+}
+
+.about-press-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.about-press-thumbnail {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  display: block;
+}
+
+.about-press-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-top: var(--space-1);
+}
+
+.about-press-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-body-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+.about-press-publication {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--color-ink-soft);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+/* ============================================================
+   Desktop layout — ≥ 1024px
+   ============================================================ */
+@media (min-width: 1024px) {
+  /* Two-column grid: text 60% / portrait 40% */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    grid-template-rows: auto;
+    gap: var(--space-7);
+    align-items: start;
+  }
+
+  /* Portrait returns to natural document order (right column) */
+  .about-portrait-col {
+    order: 0;
+    width: 100%;
+  }
+
+  /* Credits expand to two columns on desktop */
+  .about-credits {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-credits-item {
+    padding: var(--space-2) var(--space-2) var(--space-2) 0;
+  }
+}
+
+/* ============================================================
+   Reduced-motion: strip all transitions
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .about-press-card {
+    transition: none;
+  }
+}
