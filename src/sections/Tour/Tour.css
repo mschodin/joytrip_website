@@ -21,14 +21,9 @@
 }
 
 .tour-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--fs-body-sm);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 var(--space-2);
-  line-height: var(--lh-body);
+  /* font-family, font-size, font-weight, text-transform, color,
+     line-height, margin inherited from .eyebrow utility */
+  letter-spacing: 0.18em; /* wider spacing than default 0.12em */
 }
 
 .tour-title {

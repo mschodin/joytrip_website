@@ -34,6 +34,7 @@ export default function PictureImage({
   sizes = '100vw',
   className,
   loading = 'lazy',
+  fetchpriority,
   width,
   height,
   style,
@@ -83,6 +84,7 @@ export default function PictureImage({
         alt={alt}
         className={className}
         loading={loading}
+        fetchPriority={fetchpriority}
         decoding="async"
         width={width}
         height={height}

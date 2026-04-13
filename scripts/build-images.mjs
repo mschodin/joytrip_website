@@ -107,30 +107,18 @@ async function main() {
       const webpOut = path.join(OUT_DIR, webpName);
       const jpgOut  = path.join(OUT_DIR, jpgName);
 
-      const baseOp = sharp(srcPath)
+      const resized = sharp(srcPath)
         .resize({ width, withoutEnlargement: true })
         .withMetadata(false); // Strip EXIF
 
       // AVIF
-      await sharp(srcPath)
-        .resize({ width, withoutEnlargement: true })
-        .withMetadata(false)
-        .avif({ quality: AVIF_QUALITY })
-        .toFile(avifOut);
+      await resized.clone().avif({ quality: AVIF_QUALITY }).toFile(avifOut);
 
       // WebP
-      await sharp(srcPath)
-        .resize({ width, withoutEnlargement: true })
-        .withMetadata(false)
-        .webp({ quality: WEBP_QUALITY })
-        .toFile(webpOut);
+      await resized.clone().webp({ quality: WEBP_QUALITY }).toFile(webpOut);
 
       // JPG
-      await sharp(srcPath)
-        .resize({ width, withoutEnlargement: true })
-        .withMetadata(false)
-        .jpeg({ quality: JPEG_QUALITY })
-        .toFile(jpgOut);
+      await resized.clone().jpeg({ quality: JPEG_QUALITY }).toFile(jpgOut);
 
       avifPaths.push(`../Assets/optimized/${avifName}`);
       webpPaths.push(`../Assets/optimized/${webpName}`);

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Nav.css';
 import { scrollToId } from '../shared/scrollToId';
 
+const NAV_HEIGHT = 72; // must match --nav-height in tokens.css
+
 const NAV_LINKS = [
   { label: 'Music',        id: 'section-music' },
   { label: 'Tour',         id: 'section-tour' },
@@ -43,7 +45,7 @@ function NavBar() {
       },
       {
         // Account for sticky nav height at the top; give 40% dead zone at bottom
-        rootMargin: `-${72}px 0px -40% 0px`,
+        rootMargin: `-${NAV_HEIGHT}px 0px -40% 0px`,
         threshold: [0, 0.25, 0.4, 0.5, 0.75, 1],
       }
     );
@@ -62,7 +64,10 @@ function NavBar() {
 
   // ── Shadow on scroll ──────────────────────────────────────────────────────
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 8);
+    const handleScroll = () => {
+      const shouldBeScrolled = window.scrollY > 24;
+      setScrolled((prev) => (shouldBeScrolled !== prev ? shouldBeScrolled : prev));
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

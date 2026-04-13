@@ -113,7 +113,7 @@ function EditorialCallout({ release }) {
   return (
     <Reveal delay={0.4}>
       <aside className="music-editorial" aria-label={`Editorial note on ${release.title}`}>
-        <p className="music-editorial-eyebrow">ON {release.title.toUpperCase()}</p>
+        <p className="eyebrow music-editorial-eyebrow">ON {release.title.toUpperCase()}</p>
         <blockquote className="music-editorial-quote">
           {release.editorial}
         </blockquote>
@@ -132,7 +132,7 @@ export default function Music() {
       {/* ── Section header ── */}
       <Reveal>
         <header className="music-header">
-          <p className="music-eyebrow">MUSIC</p>
+          <p className="eyebrow music-eyebrow">MUSIC</p>
           <h2 className="music-display">Listen</h2>
         </header>
       </Reveal>

@@ -64,18 +64,33 @@ const PHOTOS = [
   buildPhoto('joytrip-sunset-photo', 'Joytrip at sunset'),
   buildPhoto('lauderdale-sunrise-corn', 'Sunrise over Lauderdale Lakes cornfields'),
   buildPhoto('vue-full-band', 'Joytrip full band at Vue'),
-  buildPhoto('beach-sunset1', 'Beach sunset'),
-  buildPhoto('coastal-city1', 'Coastal city skyline'),
 ].filter(Boolean);
 
 // Lightbox slides: one { src } entry per photo using the largest jpg
 const LIGHTBOX_SLIDES = PHOTOS.map((p) => ({ src: p.src }));
 
 // ---------------------------------------------------------------------------
-// First video URL — pulled from src/Components/Content.js
-// The existing embed URL is: https://www.youtube.com/embed/3YwJliPGS30?si=ZYD3hEKrchT-lJSo
+// Videos — add or reorder entries here; each object needs { src, title }.
+// VIDEO SWAP: update src URLs below to change which videos are embedded.
 // ---------------------------------------------------------------------------
-const VIDEO_1_SRC = 'https://www.youtube.com/embed/3YwJliPGS30?si=ZYD3hEKrchT-lJSo';
+const VIDEOS = [
+  {
+    src: 'https://www.youtube.com/embed/3YwJliPGS30?si=ZYD3hEKrchT-lJSo',
+    title: 'Joytrip live performance',
+  },
+  {
+    src: 'https://www.youtube.com/embed/yeHzWOpS4-k?si=W0ESXKzee8KQx7Lb',
+    title: 'Joytrip live performance',
+  },
+  {
+    src: 'https://www.youtube.com/embed/a0Tt__KUB74',
+    title: 'Joytrip live performance',
+  },
+  {
+    src: 'https://www.youtube.com/embed/iCrQIF3ZxAU',
+    title: 'Joytrip live performance',
+  },
+];
 
 // ---------------------------------------------------------------------------
 // Component
@@ -95,7 +110,7 @@ export default function Gallery() {
     <section className="gallery-section" id="section-gallery" aria-label="Gallery">
       {/* Section header */}
       <Reveal delay={0}>
-        <p className="gallery-eyebrow" aria-hidden="true">GALLERY</p>
+        <p className="eyebrow gallery-eyebrow" aria-hidden="true">GALLERY</p>
         <h2 className="gallery-heading">Live &amp; lens</h2>
       </Reveal>
 
@@ -103,32 +118,20 @@ export default function Gallery() {
       {/* Videos block                                                      */}
       {/* ---------------------------------------------------------------- */}
       <div className="gallery-videos">
-        <Reveal delay={0.1} className="gallery-video-wrap">
-          <div className="gallery-video-aspect">
-            <iframe
-              src={VIDEO_1_SRC}
-              title="Joytrip live performance"
-              frameBorder="0"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.2} className="gallery-video-wrap">
-          <div className="gallery-video-aspect">
-            {/* VIDEO SWAP: replace src below with the next video URL */}
-            <iframe
-              src="https://www.youtube.com/embed/yeHzWOpS4-k?si=W0ESXKzee8KQx7Lb"
-              title="Joytrip live performance"
-              frameBorder="0"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </Reveal>
+        {VIDEOS.map((video, i) => (
+          <Reveal key={video.src} delay={0.1 + i * 0.1} className="gallery-video-wrap">
+            <div className="gallery-video-aspect">
+              <iframe
+                src={video.src}
+                title={video.title}
+                frameBorder="0"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </Reveal>
+        ))}
       </div>
 
       {/* ---------------------------------------------------------------- */}

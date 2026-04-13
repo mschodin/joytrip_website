@@ -22,7 +22,7 @@ function TourHeader() {
   return (
     <div className="tour-header">
       <Reveal delay={0}>
-        <p className="tour-eyebrow">TOUR</p>
+        <p className="eyebrow tour-eyebrow">TOUR</p>
       </Reveal>
       <Reveal delay={0.1}>
         <h2 className="tour-title">On the road</h2>

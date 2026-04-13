@@ -34,7 +34,7 @@ export default function About() {
       {/* ── Section header ── */}
       <Reveal>
         <header className="about-header">
-          <p className="about-eyebrow">ABOUT</p>
+          <p className="eyebrow about-eyebrow">ABOUT</p>
           <h2 className="about-display">The band</h2>
         </header>
       </Reveal>
@@ -78,7 +78,7 @@ export default function About() {
                 className="about-portrait-img"
                 loading="lazy"
               />
-              <div className="about-portrait-overlay" aria-hidden="true" />
+              <div className="warm-overlay about-portrait-overlay" aria-hidden="true" />
             </div>
           </Reveal>
         </div>
@@ -89,7 +89,7 @@ export default function About() {
         <div className="about-press-divider" aria-hidden="true" />
 
         <Reveal delay={0.2}>
-          <p className="about-press-eyebrow">PRESS</p>
+          <p className="eyebrow about-press-eyebrow">PRESS</p>
           <a
             className="about-press-card"
             href="https://littlevillagemag.com/album-review-qa-joytrip-mr-time-and-the-joyful-ploys/"

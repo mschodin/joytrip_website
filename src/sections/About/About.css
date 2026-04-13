@@ -15,14 +15,7 @@
 }
 
 .about-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--fs-body-sm);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 var(--space-2) 0;
-  line-height: var(--lh-body);
+  /* all properties inherited from .eyebrow utility */
 }
 
 .about-display {
@@ -70,10 +63,7 @@
 
 /* Warm sepia overlay for visual unity */
 .about-portrait-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-overlay-warm);
-  pointer-events: none;
+  /* position, inset, background, pointer-events from .warm-overlay utility */
   border-radius: var(--radius-lg);
 }
 
@@ -150,15 +140,10 @@
 }
 
 .about-press-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--fs-body-sm);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  /* font-family, font-size, font-weight, letter-spacing, text-transform,
+     color, line-height inherited from .eyebrow utility */
   font-variant: small-caps;
-  color: var(--color-accent);
   margin: 0 0 var(--space-4) 0;
-  line-height: var(--lh-body);
 }
 
 /* Press card: anchor element */

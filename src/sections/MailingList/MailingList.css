@@ -79,13 +79,9 @@
 
 /* ─── Eyebrow ─── */
 .ml-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--fs-body-sm);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  line-height: var(--lh-body);
+  /* font-family, font-size, font-weight, text-transform, color,
+     line-height inherited from .eyebrow utility */
+  letter-spacing: 0.18em; /* wider than default 0.12em */
   margin: 0;
 }
 
@@ -127,6 +123,9 @@
   display: block;
   border: 0;
   height: 600px;
+  /* Replaces deprecated marginHeight/marginWidth/scrolling HTML attributes */
+  margin: 0;
+  overflow: hidden;
 }
 
 /* ─── Tablet (≥ 768px) ─── */

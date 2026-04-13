@@ -35,11 +35,8 @@
 
 /* ─── Layer 2: Warm sepia wash ─── */
 .merch-overlay-sepia {
-  position: absolute;
-  inset: 0;
+  /* position, inset, background, pointer-events from .warm-overlay utility */
   z-index: 1;
-  background: var(--color-overlay-warm);
-  pointer-events: none;
 }
 
 /* ─── Layer 3: Dark gradient for text legibility ─── */
@@ -69,15 +66,11 @@
 
 /* ── Eyebrow ── */
 .merch-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--fs-body-sm);
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  /* font-family, font-size, font-weight, text-transform, color,
+     line-height inherited from .eyebrow utility */
+  letter-spacing: 0.2em; /* wider than default 0.12em */
   font-variant: small-caps;
-  color: var(--color-accent);
-  margin: 0 0 var(--space-3);
-  line-height: var(--lh-body);
+  margin: 0 0 var(--space-3); /* larger bottom margin than default space-2 */
 }
 
 /* ── Headline ── */

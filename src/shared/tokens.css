@@ -54,6 +54,10 @@
   /* ─── Layout ─── */
   --nav-height: 72px;
   --max-content-width: 1200px;
+
+  /* ─── Shadows ─── */
+  --shadow-sm: 0 1px 4px rgba(26, 23, 20, 0.08);
+  --shadow-md: 0 4px 24px rgba(26, 23, 20, 0.12);
 }
 
 /* ─── Box Sizing Reset ─── */
@@ -123,4 +127,24 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+
+/* ─── Utility: eyebrow label ─── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  line-height: var(--lh-body);
+  margin: 0 0 var(--space-2);
+}
+
+/* ─── Utility: warm overlay ─── */
+.warm-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay-warm);
+  pointer-events: none;
 }

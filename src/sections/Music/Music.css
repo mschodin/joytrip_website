@@ -17,13 +17,7 @@
 }
 
 .music-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--fs-body-sm);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin: 0 0 var(--space-2) 0;
+  /* all properties inherited from .eyebrow utility */
 }
 
 .music-display {
@@ -168,6 +162,7 @@
   width: 24px;
   height: 24px;
   display: block;
+  filter: invert(1);
 }
 
 /* ── Editorial callout ──────────────────────────────────────────── */
@@ -179,14 +174,11 @@
 }
 
 .music-editorial-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--fs-body-sm);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  /* font-family, font-size, font-weight, text-transform, color
+     inherited from .eyebrow utility */
+  letter-spacing: 0.1em; /* tighter than default 0.12em */
   font-variant: small-caps;
-  color: var(--color-accent);
-  margin: 0 0 var(--space-3) 0;
+  margin: 0 0 var(--space-3) 0; /* larger bottom margin than default space-2 */
 }
 
 .music-editorial-quote {

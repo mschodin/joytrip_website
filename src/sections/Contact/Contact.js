@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <div className="contact">
       <Reveal delay={0}>
-        <p className="contact-eyebrow">CONTACT</p>
+        <p className="eyebrow contact-eyebrow">CONTACT</p>
         <h2 className="contact-heading">Book the band</h2>
       </Reveal>
 
@@ -21,7 +21,7 @@ export default function Contact() {
 
       {/* Direct email block */}
       <Reveal delay={0.2} className="contact-direct">
-        <p className="contact-direct-label">Reach us directly</p>
+        <p className="eyebrow contact-direct-label">Reach us directly</p>
         <a
           className="contact-email"
           href={`mailto:${BOOKING_EMAIL}`}

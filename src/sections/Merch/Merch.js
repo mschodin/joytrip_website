@@ -44,7 +44,7 @@ export default function Merch() {
       </div>
 
       {/* ── Layer 2: Warm sepia wash ── */}
-      <div className="merch-overlay-sepia" aria-hidden="true" />
+      <div className="warm-overlay merch-overlay-sepia" aria-hidden="true" />
 
       {/* ── Layer 3: Dark gradient for text legibility ── */}
       {/*
@@ -56,7 +56,7 @@ export default function Merch() {
       {/* ── Layer 4: Content ── */}
       <div className="merch-content">
         <Reveal>
-          <p className="merch-eyebrow">MERCH</p>
+          <p className="eyebrow merch-eyebrow">MERCH</p>
 
           <h2 className="merch-headline">Wear it / spin it</h2>
 

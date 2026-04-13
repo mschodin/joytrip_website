@@ -28,14 +28,7 @@
 
 /* ─── Eyebrow ─── */
 .contact-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--fs-body-sm);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  line-height: var(--lh-body);
-  margin: 0 0 var(--space-2);
+  /* all properties inherited from .eyebrow utility */
 }
 
 /* ─── Heading ─── */
@@ -76,13 +69,9 @@
 
 /* ─── Direct email label ─── */
 .contact-direct-label {
-  font-family: var(--font-body);
-  font-size: var(--fs-body-sm);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-ink-soft);
-  line-height: var(--lh-body);
+  /* font-family, font-size, font-weight, letter-spacing, text-transform,
+     line-height inherited from .eyebrow utility */
+  color: var(--color-ink-soft); /* muted, not accent */
   margin: 0;
 }
 

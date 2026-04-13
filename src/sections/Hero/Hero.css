@@ -58,11 +58,8 @@
 
 /* ─── Layer 2: Warm sepia overlay ─── */
 .hero-overlay-sepia {
-  position: absolute;
-  inset: 0;
+  /* position, inset, background, pointer-events from .warm-overlay utility */
   z-index: 1;
-  background: var(--color-overlay-warm);
-  pointer-events: none;
 }
 
 /* ─── Layer 3: Bottom gradient for text legibility ─── */

@@ -34,7 +34,7 @@ export default function MailingList() {
 
         {/* Eyebrow label */}
         <Reveal delay={0.05}>
-          <p className="ml-eyebrow">Text List</p>
+          <p className="eyebrow ml-eyebrow">Text List</p>
         </Reveal>
 
         {/* Main headline */}
@@ -61,9 +61,6 @@ export default function MailingList() {
               title="Joytrip text list sign-up form"
               loading="lazy"
               frameBorder="0"
-              marginHeight="0"
-              marginWidth="0"
-              scrolling="no"
             >
               Loading…
             </iframe>

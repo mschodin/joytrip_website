@@ -38,12 +38,14 @@ export default function Hero() {
             alt=""
             sizes="100vw"
             className="hero-photo"
+            loading="eager"
+            fetchpriority="high"
           />
         </Parallax>
       </div>
 
       {/* ── Layer 2: Warm sepia overlay ── */}
-      <div className="hero-overlay-sepia" aria-hidden="true" />
+      <div className="warm-overlay hero-overlay-sepia" aria-hidden="true" />
 
       {/* ── Layer 3: Bottom gradient for text legibility ── */}
       <div className="hero-overlay-gradient" aria-hidden="true" />
