@@ -113,9 +113,9 @@ function EditorialCallout({ release }) {
   return (
     <Reveal delay={0.4}>
       <aside className="music-editorial" aria-label={`Editorial note on ${release.title}`}>
-        <p className="eyebrow music-editorial-eyebrow">ON {release.title.toUpperCase()}</p>
+        <p className="eyebrow music-editorial-eyebrow">LITTLE VILLAGE MAGAZINE ON {release.title.toUpperCase()}</p>
         <blockquote className="music-editorial-quote">
-          {release.editorial}
+          &ldquo;{release.editorial}&rdquo;
         </blockquote>
       </aside>
     </Reveal>
