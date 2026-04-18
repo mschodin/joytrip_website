@@ -58,6 +58,8 @@ const PHOTOS = [
   buildPhoto('studio-trio',                  "Studio trio"),
   buildPhoto('skylark-live',                 "Skylark Lounge"),
   buildPhoto('garcias-swirl',                "Garcia's"),
+  buildPhoto('joytrip-sunrise-photo',        "Joytrip at sunrise"),
+  buildPhoto('joytrip-sunset-photo',         "Joytrip at sunset"),
 ].filter(Boolean);
 
 const LIGHTBOX_SLIDES = PHOTOS.map((p) => ({ src: p.src }));
