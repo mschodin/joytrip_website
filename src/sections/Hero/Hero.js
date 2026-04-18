@@ -66,13 +66,13 @@ export default function Hero() {
         <div className="hero-quotes">
           <Reveal>
             <blockquote className="hero-quote">
-              {HERO_QUOTES[0]}
+              {`\u201C${HERO_QUOTES[0]}\u201D`}
             </blockquote>
           </Reveal>
 
           <Reveal delay={0.15}>
             <blockquote className="hero-quote">
-              {HERO_QUOTES[1]}
+              {`\u201C${HERO_QUOTES[1]}\u201D`}
             </blockquote>
           </Reveal>
         </div>
