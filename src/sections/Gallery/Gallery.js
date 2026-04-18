@@ -47,10 +47,17 @@ function buildPhoto(name, alt) {
 // Photo data
 // ---------------------------------------------------------------------------
 const PHOTOS = [
-  buildPhoto('joytrip-sunrise-photo', 'Joytrip at sunrise'),
-  buildPhoto('joytrip-sunset-photo', 'Joytrip at sunset'),
-  buildPhoto('lauderdale-sunrise-corn', 'Sunrise over Lauderdale Lakes cornfields'),
-  buildPhoto('vue-full-band', 'Joytrip full band at Vue'),
+  buildPhoto('live-little-bear',             "Live at Little Bear Saloon"),
+  buildPhoto('cornfield-looking-at-camera',  "Band in the cornfield"),
+  buildPhoto('greenroom-swirl',              "Greenroom"),
+  buildPhoto('garcias-live',                 "Live at Garcia's"),
+  buildPhoto('garcias-eddie-yell',           "Eddie on the mic at Garcia's"),
+  buildPhoto('garcias-crowd',                "Garcia's crowd"),
+  buildPhoto('eddie-bennett-garcias',        "Eddie and Bennett at Garcia's"),
+  buildPhoto('acoustic-tracking',            "Acoustic tracking session"),
+  buildPhoto('studio-trio',                  "Studio trio"),
+  buildPhoto('skylark-live',                 "Skylark Lounge"),
+  buildPhoto('garcias-swirl',                "Garcia's"),
 ].filter(Boolean);
 
 const LIGHTBOX_SLIDES = PHOTOS.map((p) => ({ src: p.src }));
