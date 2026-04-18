@@ -108,6 +108,7 @@ async function main() {
       const jpgOut  = path.join(OUT_DIR, jpgName);
 
       const resized = sharp(srcPath)
+        .rotate()                              // auto-orient from EXIF, then strip
         .resize({ width, withoutEnlargement: true })
         .withMetadata(false); // Strip EXIF
 
