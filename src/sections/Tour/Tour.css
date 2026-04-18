@@ -331,13 +331,26 @@
   }
 
   .tour-populated-grid {
-    grid-template-columns: minmax(260px, 360px) 1fr;
+    grid-template-columns: minmax(260px, 0.9fr) 1fr;
     gap: var(--space-6);
     max-width: 960px;
+    align-items: stretch;  /* flyer column matches card column height */
   }
 
   .tour-flyer {
-    max-width: 360px;
+    max-width: none;
     margin-inline: 0;  /* anchored left in its column */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tour-flyer picture,
+  .tour-flyer img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
   }
 }
