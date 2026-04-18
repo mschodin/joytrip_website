@@ -4,6 +4,15 @@
 import acousticTracking640Avif from '../Assets/optimized/acoustic-tracking-640.avif';
 import acousticTracking640Webp from '../Assets/optimized/acoustic-tracking-640.webp';
 import acousticTracking640Jpg  from '../Assets/optimized/acoustic-tracking-640.jpg';
+import acousticTracking1024Avif from '../Assets/optimized/acoustic-tracking-1024.avif';
+import acousticTracking1024Webp from '../Assets/optimized/acoustic-tracking-1024.webp';
+import acousticTracking1024Jpg  from '../Assets/optimized/acoustic-tracking-1024.jpg';
+import acousticTracking1600Avif from '../Assets/optimized/acoustic-tracking-1600.avif';
+import acousticTracking1600Webp from '../Assets/optimized/acoustic-tracking-1600.webp';
+import acousticTracking1600Jpg  from '../Assets/optimized/acoustic-tracking-1600.jpg';
+import acousticTracking2400Avif from '../Assets/optimized/acoustic-tracking-2400.avif';
+import acousticTracking2400Webp from '../Assets/optimized/acoustic-tracking-2400.webp';
+import acousticTracking2400Jpg  from '../Assets/optimized/acoustic-tracking-2400.jpg';
 import beachSunset1640Avif from '../Assets/optimized/beach-sunset1-640.avif';
 import beachSunset1640Webp from '../Assets/optimized/beach-sunset1-640.webp';
 import beachSunset1640Jpg  from '../Assets/optimized/beach-sunset1-640.jpg';
@@ -139,9 +148,15 @@ import skylarkLive1024Jpg  from '../Assets/optimized/skylark-live-1024.jpg';
 import skylarkLive1600Avif from '../Assets/optimized/skylark-live-1600.avif';
 import skylarkLive1600Webp from '../Assets/optimized/skylark-live-1600.webp';
 import skylarkLive1600Jpg  from '../Assets/optimized/skylark-live-1600.jpg';
-import studioTrio512Avif from '../Assets/optimized/studio-trio-512.avif';
-import studioTrio512Webp from '../Assets/optimized/studio-trio-512.webp';
-import studioTrio512Jpg  from '../Assets/optimized/studio-trio-512.jpg';
+import studioTrio640Avif from '../Assets/optimized/studio-trio-640.avif';
+import studioTrio640Webp from '../Assets/optimized/studio-trio-640.webp';
+import studioTrio640Jpg  from '../Assets/optimized/studio-trio-640.jpg';
+import studioTrio1024Avif from '../Assets/optimized/studio-trio-1024.avif';
+import studioTrio1024Webp from '../Assets/optimized/studio-trio-1024.webp';
+import studioTrio1024Jpg  from '../Assets/optimized/studio-trio-1024.jpg';
+import studioTrio1600Avif from '../Assets/optimized/studio-trio-1600.avif';
+import studioTrio1600Webp from '../Assets/optimized/studio-trio-1600.webp';
+import studioTrio1600Jpg  from '../Assets/optimized/studio-trio-1600.jpg';
 import vueFullBand640Avif from '../Assets/optimized/vue-full-band-640.avif';
 import vueFullBand640Webp from '../Assets/optimized/vue-full-band-640.webp';
 import vueFullBand640Jpg  from '../Assets/optimized/vue-full-band-640.jpg';
@@ -157,12 +172,12 @@ import vueFullBand2400Jpg  from '../Assets/optimized/vue-full-band-2400.jpg';
 
 export const imageManifest = Object.freeze({
   'acoustic-tracking': {
-    avif: [acousticTracking640Avif],
-    webp: [acousticTracking640Webp],
-    jpg:  [acousticTracking640Jpg],
-    widths: [640],
-    naturalWidth: 640,
-    naturalHeight: 896,
+    avif: [acousticTracking640Avif, acousticTracking1024Avif, acousticTracking1600Avif, acousticTracking2400Avif],
+    webp: [acousticTracking640Webp, acousticTracking1024Webp, acousticTracking1600Webp, acousticTracking2400Webp],
+    jpg:  [acousticTracking640Jpg, acousticTracking1024Jpg, acousticTracking1600Jpg, acousticTracking2400Jpg],
+    widths: [640, 1024, 1600, 2400],
+    naturalWidth: 4284,
+    naturalHeight: 5712,
   },
   'beach-sunset1': {
     avif: [beachSunset1640Avif],
@@ -285,12 +300,12 @@ export const imageManifest = Object.freeze({
     naturalHeight: 1536,
   },
   'studio-trio': {
-    avif: [studioTrio512Avif],
-    webp: [studioTrio512Webp],
-    jpg:  [studioTrio512Jpg],
-    widths: [512],
-    naturalWidth: 512,
-    naturalHeight: 512,
+    avif: [studioTrio640Avif, studioTrio1024Avif, studioTrio1600Avif],
+    webp: [studioTrio640Webp, studioTrio1024Webp, studioTrio1600Webp],
+    jpg:  [studioTrio640Jpg, studioTrio1024Jpg, studioTrio1600Jpg],
+    widths: [640, 1024, 1600],
+    naturalWidth: 2160,
+    naturalHeight: 1620,
   },
   'vue-full-band': {
     avif: [vueFullBand640Avif, vueFullBand1024Avif, vueFullBand1600Avif, vueFullBand2400Avif],
