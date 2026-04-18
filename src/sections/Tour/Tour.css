@@ -146,6 +146,32 @@
   max-width: 720px;
 }
 
+/* Tour populated grid: stacked on mobile (flyer first), two-column on desktop */
+.tour-populated-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 720px;
+  align-items: start;
+}
+
+.tour-flyer {
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;  /* center on mobile so portrait flyer doesn't sprawl */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.tour-flyer picture,
+.tour-flyer img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ─── Show card ─── */
 .tour-card {
   display: flex;
@@ -302,5 +328,16 @@
   .tour-card-action {
     flex-shrink: 0;
     align-items: center;
+  }
+
+  .tour-populated-grid {
+    grid-template-columns: minmax(260px, 360px) 1fr;
+    gap: var(--space-6);
+    max-width: 960px;
+  }
+
+  .tour-flyer {
+    max-width: 360px;
+    margin-inline: 0;  /* anchored left in its column */
   }
 }
