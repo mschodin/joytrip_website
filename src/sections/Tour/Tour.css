@@ -160,9 +160,6 @@
   width: 100%;
   max-width: 420px;
   margin-inline: auto;  /* center on mobile so portrait flyer doesn't sprawl */
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
 }
 
 .tour-flyer picture,
@@ -170,6 +167,7 @@
   display: block;
   width: 100%;
   height: auto;
+  border-radius: var(--radius-md);
 }
 
 /* ─── Show card ─── */
