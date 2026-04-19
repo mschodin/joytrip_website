@@ -93,10 +93,14 @@ async function main() {
     const jpgPaths = [];
     const usedWidths = [];
 
-    for (const width of TARGET_WIDTHS) {
-      // Skip widths larger than the natural width
-      if (width > naturalWidth) continue;
+    // Determine which widths to emit. If the image is smaller than every target
+    // width we still need at least one variant so PictureImage has a valid src.
+    const widthsToProcess = TARGET_WIDTHS.filter(w => w <= naturalWidth);
+    if (widthsToProcess.length === 0) {
+      widthsToProcess.push(naturalWidth);
+    }
 
+    for (const width of widthsToProcess) {
       usedWidths.push(width);
 
       const avifName = `${basename}-${width}.avif`;
@@ -108,6 +112,7 @@ async function main() {
       const jpgOut  = path.join(OUT_DIR, jpgName);
 
       const resized = sharp(srcPath)
+        .rotate()                              // auto-orient from EXIF, then strip
         .resize({ width, withoutEnlargement: true })
         .withMetadata(false); // Strip EXIF
 

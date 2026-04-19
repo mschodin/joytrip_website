@@ -11,6 +11,7 @@
 
 import React from 'react';
 
+import PictureImage from '../../shared/PictureImage';
 import Reveal from '../../shared/Reveal';
 import { scrollToId } from '../../shared/scrollToId';
 import { gigs } from './gigs';
@@ -135,11 +136,22 @@ function TourPopulated() {
   return (
     <div className="tour-populated">
       <TourHeader />
-
-      <div className="tour-card-list">
-        {gigs.map((gig, i) => (
-          <GigCard key={`${gig.date}-${gig.venue}-${i}`} gig={gig} index={i} />
-        ))}
+      <div className="tour-populated-grid">
+        <Reveal delay={0}>
+          <div className="tour-flyer">
+            <PictureImage
+              name="colorado-flyer-take-4"
+              alt="Colorado tour flyer — May 2026"
+              sizes="(max-width: 768px) 90vw, 360px"
+              loading="lazy"
+            />
+          </div>
+        </Reveal>
+        <div className="tour-card-list">
+          {gigs.map((gig, i) => (
+            <GigCard key={`${gig.date}-${gig.venue}-${i}`} gig={gig} index={i} />
+          ))}
+        </div>
       </div>
     </div>
   );
